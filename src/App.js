@@ -1,25 +1,113 @@
-import logo from './logo.svg';
+import React from 'react';
+
+// REACT ROUTER
+import {
+    BrowserRouter as Router,
+    Link as RouterLink,
+    Route,
+    Switch
+} from "react-router-dom";
+
+// MY COMPONENTS
+import LandingPage from "./pages/Landing";
+
+import TeachPage from "./pages/Teach";
+import MathGamesPage from "./pages/MathGames";
+import PuzzleCollectionPage from "./pages/PuzzleCollection"
+
+import GardenStoryPage from "./pages/GardenStory";
+import GardenGalleryPage from "./pages/GardenGallery";
+import AboutMePage from "./pages/AboutMe";
+import MyProjectsPage from "./pages/MyProjects";
+// import ContactPage from "./pages/Contact";
+
+//  MUI imports
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
+
+// import CssBaseline from '@material-ui/core/CssBaseline';
+
+
+import theme from "./theme";
+import {
+    makeStyles, 
+    ThemeProvider } from '@material-ui/core/styles';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const useStyles = makeStyles((theme) => ({
+    app: {
+        
+        minHeight: '100vh',
+        minWidth: '100vw',
+
+    },
+    
+
+}));
+
+
+// App.js provides the Theme and Routing between pages
+
+export default function App() {
+    const classes = useStyles();
+
+    return (
+        <React.Fragment>
+            <CssBaseline />
+            <ThemeProvider theme={theme}>
+                <Router basename='/'>
+                    <Switch>
+                        
+                        {/* LANDING */}
+                        <Route exact path="/">
+                            <LandingPage />
+                        </Route>
+
+                        {/* TEACHING SERVICES */}
+                        <Route path="/teach">
+                            <TeachPage />
+                        </Route>
+
+                        <Route path="/math_games">
+                            <MathGamesPage />
+                        </Route>
+
+                        <Route path="/puzzle_collection">
+                            <PuzzleCollectionPage />
+                        </Route> 
+
+                        {/* TODO *************************************************/}
+
+
+                        {/* GARDEN STUFF */}
+                        <Route path="/photo_gallery">
+                            <GardenGalleryPage />
+                        </Route> 
+
+                        <Route path="/our_story">
+                            <GardenStoryPage />
+                        </Route> 
+
+                        {/* ABOUT ME */}
+                        <Route path="/about_me">
+                            <AboutMePage />
+                        </Route> 
+
+                        <Route path="/my_projects">
+                            <MyProjectsPage />
+                        </Route> 
+
+                        {/* <Route path="/contact">
+                        <ContactPage />
+                        </Route>  */}
+                        
+                    </Switch>
+                </Router>
+      
+            </ThemeProvider>
+        </React.Fragment>
+    );
+    
 }
 
-export default App;

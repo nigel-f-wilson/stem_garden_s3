@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.MuiCardActionArea-root {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    flex-grow: 1;
+}
+
+.MuiListItemIcon-root {
+    color: rgba(0, 0, 0, 0.94);
+    min-width: 45px;
+}
+
+.MuiIcon-root {
+    overflow: visible;
+}
+
+.MuiDrawer-paperAnchorRight {
+    height: 50%;
+}
