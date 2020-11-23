@@ -71,18 +71,17 @@ const useStyles = makeStyles((theme) => ({
     },
 
 
-    mobileTitleText: {
+    titleText: {
         color: theme.palette.common.white,
         // maxWidth: '90%',
         padding: '3.0rem',
         // paddingTop: '7.0rem',
         // paddingBottom: '3.0rem',
         textShadow: '0.15rem 0.15rem 0.3rem black',
-        // fontSize: 'calc(1rem + 5vw)',
-        fontSize: '7vw'
+        // fontSize: '7vw',
+        fontSize: 'min(2.5rem, 7vw)'
     },
-    mobileSubtitleText: {
-        // border: 'solid red 1px',
+    subtitleText: {
         color: theme.palette.common.white,
         padding: '1rem 3rem 1rem 3rem',
         textShadow: '0.12rem 0.12rem 0.20rem black',
@@ -123,6 +122,7 @@ export default function LandingPage(props) {
     return (
         <Box className={classes.root}  >
             <Navbar />
+            <SpacerBox />
             <MobileBody  />
             <DesktopBody />
         </Box>
@@ -136,9 +136,8 @@ function MobileBody(props) {
             className={classes.mobileBody}
             display={{ xs: 'block', lg: 'none' }}  
         >
-            <SpacerBox />
             <Typography
-                className={classes.mobileTitleText}
+                className={classes.titleText}
                 align='center'
                 color='textPrimary'
                 component='h1'
@@ -154,7 +153,7 @@ function MobileBody(props) {
                 display={{ xs: 'block', sm: 'none' }}
             >
                 <Typography
-                    className={classes.mobileSubtitleText}
+                    className={classes.subtitleText}
                     align='justify'
                     color='textPrimary'
                     component='h2'
@@ -170,7 +169,7 @@ function MobileBody(props) {
                 display={{ xs: 'none', sm: 'block' }}
             >
                 <Typography
-                    className={classes.mobileSubtitleText}
+                    className={classes.subtitleText}
                     align='justify'
                     color='textPrimary'
                     component='h2'
@@ -202,14 +201,13 @@ function DesktopBody(props) {
             className={classes.desktopBody}
             display={{ xs: 'none', lg: 'block' }}
         >
-            <SpacerBox />
             <Container
                 className={classes.desktopContainer}
                 maxWidth='lg'
                 // disableGutters
             >
                 <Typography
-                    className={classes.desktopTitleText}
+                    className={classes.titleText}
                     align='center'
                     color='textPrimary'
                     component='h1'
@@ -225,7 +223,7 @@ function DesktopBody(props) {
                     display={{ xs: 'none', sm: 'block' }}
                 >
                     <Typography
-                        className={classes.desktopSubtitleText}
+                        className={classes.subtitleText}
                         align='justify'
                         color='textPrimary'
                         component='h2'
