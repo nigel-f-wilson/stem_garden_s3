@@ -103,6 +103,21 @@ export default function GardenStoryPage(props) {
                     <a> Click Here </a> for a list of some of my favorite books and TED Talks on philosophy of education.
                 </Typography>
 
+                <Typography className={classes.header} align='center' color='textPrimary' component='h2' variant='h2'>
+                    Pricing
+                </Typography>
+                <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
+                    A goal of the STEM Garden is to make engaging math and science education accessible to all.  
+                    Because of this we accept payment on a sliding scale, within the following price ranges. 
+                    You are invited to look within and decide what you are capable of paying, depending on your ability to support your community.
+                    <br /> &bull; Chess lessons and STEM Enrichment: $30-50 per hour. 
+                    <br /> &bull; Tutoring, elementary thru algebra: $30-50 per hour. 
+                    <br /> &bull; Tutoring, College level, AP, & Calculus: $45-65 per hour.
+                    <br /> &bull; Test Prep, SAT, ACT, GRE: $45-65 per hour.
+                </Typography>
+                
+
+
 
                 <Typography className={classes.header} align='center' color='textPrimary' component='h2' variant='h2'>
                     Professional Experience

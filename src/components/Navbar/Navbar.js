@@ -9,7 +9,7 @@ import { Link as RouterLink } from "react-router-dom";
 import MobileMenu from "./MobileMenu";
 import TeachingServicesList from "./TeachingServicesList";
 import AboutGardenList from "./AboutGardenList";
-
+import SpacerBox from "./SpacerBox";
 
 
 
@@ -188,6 +188,7 @@ export default function Navbar(props) {
         <Box className={classes.root}  >
             <MobileNavbar />
             <DesktopNavbar />
+            <SpacerBox />
         </Box>
     )
 }
@@ -195,7 +196,7 @@ export default function Navbar(props) {
 function MobileNavbar(props) {
     const classes = useStyles();
     return (
-        <Box display={{ xs: 'block', md: 'none' }} >
+        <Box display={{ xs: 'block', sm: 'none' }} >
             <AppBar
                 className={classes.navbar, classes.mobileNavbar}
                 position="fixed"
@@ -234,7 +235,7 @@ function MobileNavbar(props) {
 function DesktopNavbar(props) {
     const classes = useStyles();
     return (
-        <Box display={{ xs: 'none', md: 'block' }} >
+        <Box display={{ xs: 'none', sm: 'block' }} >
             <AppBar
                 className={classes.navbar, classes.desktopNavbar}
                 position="fixed"

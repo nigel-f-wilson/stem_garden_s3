@@ -11,8 +11,8 @@ import { Typography, Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
     mobileSpacerBox: {
-        border: 'solid red 1px',
-        padding: '1.75rem'
+        // border: 'solid red 1px',
+        padding: '1.70rem'
     },
     desktopSpacerBox: {
         // border: 'solid red 1px',

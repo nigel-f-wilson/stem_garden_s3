@@ -19,9 +19,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         height: '100vh',
         width: '100vw',
-        // minHeight: '100vh',
-        // backgroundColor: theme.palette.common.white,
-       
     },
     mobileBody: {
         // border: 'solid red 1px',
@@ -40,9 +37,10 @@ const useStyles = makeStyles((theme) => ({
         backgroundSize: 'contain',
     },
     desktopBody: {
+        // border: 'solid red 1px',
         height: 'auto',
-        width: '100%',
         minHeight: '100vh',
+        width: '100%',
         backgroundImage: `
             linear-gradient(90deg, 
                 rgba(58,94,22,0.70) 0%, 
@@ -105,13 +103,6 @@ const useStyles = makeStyles((theme) => ({
         width: '100%',
         height: '3rem',
     },
-    cardArea: {
-        // border: 'solid red 1px',
-        height: 'auto',
-        width: '100%',
-        padding: '1rem'
-
-    },
 }));
 
 
@@ -122,7 +113,6 @@ export default function LandingPage(props) {
     return (
         <Box className={classes.root}  >
             <Navbar />
-            <SpacerBox />
             <MobileBody  />
             <DesktopBody />
         </Box>
@@ -134,7 +124,7 @@ function MobileBody(props) {
     return (
         <Box 
             className={classes.mobileBody}
-            display={{ xs: 'block', lg: 'none' }}  
+            display={{ xs: 'block', md: 'none' }}  
         >
             <Typography
                 className={classes.titleText}
@@ -199,7 +189,7 @@ function DesktopBody(props) {
     return ( 
         <Box
             className={classes.desktopBody}
-            display={{ xs: 'none', lg: 'block' }}
+            display={{ xs: 'none', md: 'block' }}
         >
             <Container
                 className={classes.desktopContainer}
