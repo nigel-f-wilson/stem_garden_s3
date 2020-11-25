@@ -41,12 +41,21 @@ const useStyles = makeStyles((theme) => ({
         // justifyContent: 'center',
         alignItems: 'center'
     },
+    titleText: {
+        color: theme.palette.common.white,
+        padding: '4.0rem',
+    },
+    subtitleText: {
+        color: theme.palette.common.white,
+        padding: '2.0rem 4.0rem',
+    },
     header: {
         color: theme.palette.common.white,
-        padding: '1.0rem 0.0rem',
+        padding: '0.0rem 0.0rem',
     },
     body: {
         color: theme.palette.common.white,
+        padding: '0.0rem 0.0rem',
         paddingBottom: '1.5rem',
         // maxWidth: '640px'
     },
@@ -56,39 +65,55 @@ const useStyles = makeStyles((theme) => ({
         // maxWidth: '640px'
     },
     tabs: {
-        // borderStyle: 'solid',
-        // borderWidth: '0.3rem',
-        // borderColor: theme.palette.primary.main,
-        // borderTopWidth: '0.0rem',
+        display: 'flex',
+        flexDirection: 'column',
+        // justifyContent: 'center',
+        // alignItems: 'center',
         flexGrow: 1,
         flexShrink: 1,
         // backgroundColor: theme.palette.primary.dark,
         backgroundColor: '#111111',
         color: theme.palette.common.white,
     },
-    
+    tabBar: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flex: '1 1 100%',
+        // color: theme.palette.common.white,
+    },
+    tabPanel: {
+        backgroundColor: theme.palette.common.black,
+        color: theme.palette.common.white,
+        padding: '0.0rem 1.0rem'
+    },
 }));
 
 
-export default function GardenStoryPage(props) {
+function TeachPage(props) {
     const classes = useStyles();
-
+    let initialTab = getTabIndex(props.location.state.selectedTab);
+    
     return (
         <Box className={classes.root}  >
             <Navbar />
-            <SpacerBox />
-
+            
             <Container
                 className={classes.body}
                 maxWidth='md'
                 disableGutters
             >
-                <Typography className={classes.header} align='center' color='textPrimary' component='h1' variant='h1'>
+                <Typography align='center' color='white' component='h1' variant='h6'>
+                    Tab: {props.location.state.selectedTab}  <br />
+                    Tab Number: {initialTab}
+                </Typography>
+                <Typography className={classes.titleText} align='center' color='textPrimary' component='h1' variant='h1'>
                     Teaching Services
                 </Typography>
-                <ServiceTabs />
+                <ServiceTabs initialTab={initialTab} key={initialTab} />
 
-                <Typography className={classes.header} align='center' color='textPrimary' component='h2' variant='h2'>
+                <Typography className={classes.subtitleText} align='center' color='textPrimary' component='h2' variant='h2'>
                     Teaching Philosophy
                 </Typography>
                 <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
@@ -162,18 +187,18 @@ export default function GardenStoryPage(props) {
 
 
 
-function ServiceTabs() {
+function ServiceTabs(props) {
     const classes = useStyles();
-    const [value, setValue] = React.useState(0);
+    const [activeTab, setActiveTab] = React.useState(props.initialTab);
 
     const handleChange = (event, newValue) => {
-        setValue(newValue);
+        setActiveTab(newValue);
     };
 
     return (
         <Box className={classes.tabs}  >
-            <AppBar position="static"  >
-                <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
+            <AppBar className={classes.tabBar} position="static"  >
+                <Tabs value={activeTab} onChange={handleChange} aria-label="simple tabs example" centered>
                     <Tab label="Tutoring" {...a11yProps(0)} />
                     <Tab label="Enrichment" {...a11yProps(1)} />
                     <Tab label="Chess" {...a11yProps(2)} />
@@ -181,7 +206,7 @@ function ServiceTabs() {
 
                 </Tabs>
             </AppBar>
-            <TabPanel value={value} index={0}>    
+            <TabPanel className={classes.tabPanel} value={activeTab} index={0}>    
                 I offer one-on-one help with any mathematics related to a class in school, at any level. <br />
                 I have experience teaching math in classroom settings to students in 3rd grade through high school,
                 and have tutored students through undergrad and graduate level courses in physics, statistics, and calculus.
@@ -189,7 +214,7 @@ function ServiceTabs() {
                 I strive to identify and fill knowledge gaps trough direct instruction when necessary,
                 but my real aim is always to help my students become more independent learners. <br />
             </TabPanel>
-            <TabPanel value={value} index={1}>
+            <TabPanel className={classes.tabPanel} value={activeTab} index={1}>
                 Come experience the fun side of math and science! 
                 Learn about solar power, game theory, gardening, the physics of music, and catapults, 
                 computer programming... you name it!  <br />
@@ -202,32 +227,46 @@ function ServiceTabs() {
                 we retain information best when we have sought it out in the process of solving a problem we 
                 already cared about finding a solution to. 
             </TabPanel>
-            <TabPanel value={value} index={2}>
-                I offer private and small group chess lessons and facilitate afterschool clubs in partnership with local schools. <br />
-                Group lessons are a great option for siblings or for parents who aren't experienced players themselves 
-                but have a child who is interested in the game and needs a practice partner. 
-                Want to start a club at your school? I can help! <br /> <br />
-                 
-                Chess and Math both require us to plan ahead, to be creative, and disiplined, and thorough in our thinking. <br />
-                As a math teacher, I am frequently asked by students struggling with motivation, 
-                "Why do I have to learn this? When am I going to need this?"
-                As a chess teacher I am never asked anything of the sort. 
-                Chess is an abstract game. It has no practical applications and noone is required to learn it, 
-                and yet, something about it draws kids to apply themselves. Chess makes kids <em>want</em> to think hard 
-                and it helps them come to see that learning and having fun are two things that can go together. 
-                Getting my students to <em>think out loud</em> enables me to tailor my guidance, to make it most 
-                relvant to them. For many kids who struggle with this in the context of math tutoring, chess has an 
-                almost magical ability to draw them out of their shells and to get them to verbalize their thoughts, 
-                making them more effective students all around. <br />
-                {/* I have played chess since I was nine years old and I am currently rated ~1600, or in the 90th percentile 
-                of players on chess.com. */}
+            
+            
+            <TabPanel className={classes.tabPanel} value={activeTab} index={2}>
+                <Typography className={classes.header} align='left' color='textPrimary' component='div' variant='h4'>
+                    Private Lessons
+                </Typography>
+                <Typography className={classes.header} align='left' color='textPrimary' component='div' variant='h4'>
+                    Afterschool Clubs
+                </Typography>
+                <Typography className={classes.header} align='left' color='textPrimary' component='div' variant='h4'>
+                    Private Lessons and Afterschool Clubs
+                </Typography>
+                <Typography className={classes.header} align='left' color='textPrimary' component='div' variant='h4'>
+                    I offer private and small group chess lessons and facilitate afterschool clubs in partnership with local schools. <br />
+                    Group lessons are a great option for siblings or for parents who aren't experienced players themselves
+                    but have a child who is interested in the game and needs a practice partner.
+                    Want to start a club at your school? I can help! <br /> <br />
+
+                    Chess and Math both require us to plan ahead, to be creative, and disiplined, and thorough in our thinking. <br />
+                    As a math teacher, I am frequently asked by students struggling with motivation,
+                    "Why do I have to learn this? When am I going to need this?"
+                    As a chess teacher I am never asked anything of the sort.
+                    Chess is an abstract game. It has no practical applications and noone is required to learn it,
+                    and yet, something about it draws kids to apply themselves. Chess makes kids <em>want</em> to think hard
+                    and it helps them come to see that learning and having fun are two things that can go together.
+                    Getting my students to <em>think out loud</em> enables me to tailor my guidance, to make it most
+                    relvant to them. For many kids who struggle with this in the context of math tutoring, chess has an
+                    almost magical ability to draw them out of their shells and to get them to verbalize their thoughts,
+                    making them more effective students all around. <br />
+                    {/* I have played chess since I was nine years old and I am currently rated ~1600, or in the 90th percentile 
+                    of players on chess.com. */}
+                </Typography>
 
                 
+                
             </TabPanel>
-            <TabPanel value={value} index={3}>
+            <TabPanel className={classes.tabPanel} value={activeTab} index={3}>
                 Need help getting ready for the SAT&reg;, ACT&reg;, or AP&reg; Calculus exams?  <br/> 
-                I can help! During the two years I worked at <a href='https://collegetrack.org/communities/new-orleans-la/'>College Track New Orleans</a> 
-                I specialized in helping students prepare for these fast-paced and high-statkes tests.
+                I can help! During the two years I worked at <a href='https://collegetrack.org/communities/new-orleans-la/'>College Track New Orleans</a> I
+                specialized in helping students prepare for these fast-paced and high-statkes tests.
                 These tests are not  
                 
                 For two years I worked 
@@ -284,3 +323,13 @@ function a11yProps(index) {
 }
 
 
+function getTabIndex(tabName) {
+    if (tabName === 'tutoring') { return 0 }
+    if (tabName === 'enrichment') { return 1 }
+    if (tabName === 'chess') { return 2 }
+    if (tabName === 'test_prep') { return 3 }
+    else { return 0 }
+}
+
+
+export default TeachPage;
