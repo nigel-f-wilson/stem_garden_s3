@@ -2,7 +2,7 @@ import React from 'react';
 // import '../../App.css';
 
 // React ROUTER
-import { Link as RouterLink } from "react-router-dom";
+// import { Link as RouterLink } from "react-router-dom";
 
 
 // MY COMPONENTS
@@ -11,12 +11,8 @@ import TeachingServicesList from "./TeachingServicesList";
 import AboutGardenList from "./AboutGardenList";
 import SpacerBox from "./SpacerBox";
 
-
-
-
 // Image Imports
 import logo from "../../images/nsgLogoSnipped.png";
-
 
 // MATERIAL-UI COMPONENTS
 import Container from '@material-ui/core/Container';
@@ -29,64 +25,39 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Grow from '@material-ui/core/Grow';
 import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
-import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
-
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Icon from '@material-ui/core/Icon';
-
-import Menu from '@material-ui/core';
-
-// MATERIAL-UI ICONS
-import MenuIcon from '@material-ui/icons/Menu';
-
 
 
 import { makeStyles } from '@material-ui/core/styles';
-import { findAllByPlaceholderText } from '@testing-library/react';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
-        backgroundColor: theme.palette.primary.main
-
+        backgroundColor: theme.palette.primary.main,
+        zIndex: '1200',
     },
     paper: {
         marginRight: theme.spacing(2),
     },
     navbar: {
-        // height: '3.5rem',
         width: '100vw',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
         backgroundColor: theme.palette.primary.main, // Matches Logo Background
         display: 'flex',
-        color: '#fff',
-        
+        color: theme.palette.common.white,
     },
     mobileNavbar: {
         height: '3.5rem',
-        width: '100vw',
-        backgroundColor: theme.palette.primary.main, // Matches Logo Background
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        color: '#fff',
     },
     desktopNavbar: {
         height: '7rem',
-        width: '100vw',
-        backgroundColor: theme.palette.primary.main, // Matches Logo Background
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        color: '#fff',
     },
 
     navbarContainer: {
         // border: 'solid red 1px',
+        addingRight: '1.0rem',
         height: '100%',
         backgroundColor: theme.palette.primary.main, // Matches Logo Background
         display: 'flex',
@@ -96,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
-    logo: {
+    mobileLogo: {
         // border: 'solid red 1px',
         height: '100%',
         backgroundImage: `
@@ -107,21 +78,28 @@ const useStyles = makeStyles((theme) => ({
         backgroundSize: 'auto 95%',
     },
     mobileBrand: {
+        height: '100%',
+
         // border: 'solid blue 1px',
-        paddingTop: '0.4rem',
+        // paddingTop: '0.4rem',
         // paddingBottom: '0.1rem',
         flex: '2 0 60%',
         display: 'flex',
-        flexDirection: 'column',
+        // flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center'
     },
+    businessType: {
+        lineHeight: '1.0',
+        // paddingBottom: '0.1rem'
+    },
+    
 
 
     desktopLogo: {
         // border: 'solid red 1px',
         height: '100%',
-        paddingRight: '6.5rem',
+        paddingRight: '7rem',
         backgroundImage: `
             url(${logo})  
         `,
@@ -131,13 +109,13 @@ const useStyles = makeStyles((theme) => ({
     },
     desktopBrand: {
         // border: 'solid blue 1px',
-        paddingTop: '1rem',
-        flex: '1 0 25%',
+        paddingBottom: '0.7rem',
+        flex: '1 0 10%',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'stretch',
-        // alignItems: 'center',
-        fontSize: '2rem'
+        justifyContent: 'flex-end',
+        fontSize: '2rem',
+        lineHeight: '2.2rem'
     },
     desktopMenuButtons: {
         // border: 'solid blue 1px',
@@ -145,12 +123,11 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'flex-end',
-        paddingRight:'2.5rem'
+        // paddingRight:'2.5rem'
     },
     desktopMenuButton: {
         color: theme.palette.common.white,
         textTransform: "none",
-        fontSize: '1.0rem',
         textAlign: 'center',
         paddingBottom: '0.5rem',
     },
@@ -158,25 +135,6 @@ const useStyles = makeStyles((theme) => ({
         border: 'solid white 1px',
         backgroundColor: theme.palette.primary.main, // Matches Logo Background
     },
-
-    businessType: {
-        lineHeight: '1.0',
-        paddingBottom: '0.1rem'
-    },
-    menu: {
-        // border: 'solid red 1px',
-        height: '100%',
-        // paddingLeft: '2rem',
-        flex: '0 0 15%',
-        display: 'flex',
-        justifyContent: 'flex-end'
-        
-    },
-    menuButton: {
-        
-        color: theme.palette.common.white
-    },
-
 }));
 
 
@@ -196,7 +154,7 @@ export default function Navbar(props) {
 function MobileNavbar(props) {
     const classes = useStyles();
     return (
-        <Box display={{ xs: 'block', sm: 'none' }} >
+        <Box display={{ xs: 'block', md: 'none' }} >
             <AppBar
                 className={classes.navbar, classes.mobileNavbar}
                 position="fixed"
@@ -209,16 +167,16 @@ function MobileNavbar(props) {
                 >
                     <Grid container>
                         <Grid item xs={2} >
-                            <Box className={classes.logo} />
+                            <Box className={classes.mobileLogo} />
                         </Grid>
                         <Grid item xs={8} >
                             <Box className={classes.mobileBrand} >
-                                <Typography variant='h4' className={classes.businessName}>
+                                <Typography variant='h3' className={classes.businessName}>
                                     STEM Garden
                                 </Typography>
-                                <Typography variant='body2' className={classes.businessType} >
+                                {/* <Typography variant='body2' className={classes.businessType} >
                                     Tutoring & Enrichment
-                                </Typography>
+                                </Typography> */}
                             </Box>
                         </Grid>
                         <Grid item xs={2} >
@@ -235,7 +193,7 @@ function MobileNavbar(props) {
 function DesktopNavbar(props) {
     const classes = useStyles();
     return (
-        <Box display={{ xs: 'none', sm: 'block' }} >
+        <Box display={{ xs: 'none', md: 'block' }} >
             <AppBar
                 className={classes.navbar, classes.desktopNavbar}
                 position="fixed"
@@ -244,7 +202,6 @@ function DesktopNavbar(props) {
                 <Container
                     className={classes.navbarContainer}
                     maxWidth='md'
-                    disableGutters
                 >
                     <Box className={classes.desktopLogo} />
                     <Box className={classes.desktopBrand} >
