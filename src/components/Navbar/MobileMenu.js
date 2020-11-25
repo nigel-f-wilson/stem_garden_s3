@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
     menu: {
         // border: 'solid red 1px',
         backgroundColor: theme.palette.primary.main,
-        // height: '100%',
+        height: '100%',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'flex-end'
@@ -78,23 +78,13 @@ export default function MobileMenu() {
     };
 
     const list = (anchor) => (
-        <Box
-            // className={clsx(classes.list, {
-            //     [classes.fullList]: anchor === 'top' || anchor === 'bottom',
-            // })}
-            className={classes.list}
+        <Box className={classes.list}
             role="presentation"
             onClick={toggleDrawer(anchor, false)}
             onKeyDown={toggleDrawer(anchor, false)}
         >
-            
             <TeachingServicesList />
-
-                <Divider />
-
             <GardenNavigationList />
-            
-            
         </Box>
     );
 
