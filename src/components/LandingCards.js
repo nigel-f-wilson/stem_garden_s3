@@ -67,11 +67,8 @@ const useStyles = makeStyles((theme) => ({
 
 // DESCRIPTION:  There will be only 4 cards on the landing page: About the Garden, Teaching Services, Chess Clubs, and Meet Nigel
 
-export default function MobileLandingCards(props) {
+export default function LandingCards(props) {
     const classes = useStyles();
-
-
-
     return (
         <Container
             className={classes.mobileCardGrid}
@@ -102,7 +99,7 @@ export default function MobileLandingCards(props) {
                                     variant="body2"
                                     color="textPrimary"
                                 >
-                                    I am a licensed math teacher offering private tutoring in any K-12 or AP
+                                    I am a licensed math teacher offering private tutoring in any K-12, AP, or university
                                     math class. If you have fallen behind, want to get ahead, or
                                     simply want to learn in a more fun and hands-on way, call today!
                                 </Typography>
@@ -150,7 +147,7 @@ export default function MobileLandingCards(props) {
                         <CardActions className={classes.cardButtons} >
                             <Button
                                 component={RouterLink}
-                                to='/garden_story'
+                                to='/our_story'
                                 variant='contained'
                                 size="medium"
                                 color="primary"
