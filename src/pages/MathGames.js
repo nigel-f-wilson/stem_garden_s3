@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
     // },
     
     cardArea: {
-        padding: '2.0rem',
+        // padding: '2.0rem',
     },
 
 }));
@@ -78,19 +78,28 @@ function PageBody(props) {
                 Math Games
             </Typography>
             <Box  p={4} >
-                <Typography className={classes.body} align='justify' color='secondary' component='h2' variant='body1' >
+                <Typography align='justify' color='secondary' component='h2' variant='body1' >
                     I love teaching mathematical thinking through the lens of simple games.  
                     Both games of strategy and games of chance have something to teach us.
-                    Mathem
-
-
-                    Proof is the heart of all mathematical thinking; we start with a few simple assumptions (axioms) 
-                    and we put them together in creative ways to prove more complex and interesting theorems. 
-                    But what does it really mean to "prove" something is true?
-                    That is a question philosophers and mathematicians have struggled with for a long time. 
-                    It's deeper than just showing your work or explaining your reasoning. 
-                    Mathematical proof is subtle and difficult explain, yet a game as simple as tic-tac-toe offers us 
-                    an excellent gateway to understanding this elusive concept. 
+                     
+                    The concept of Proof is the foundation of all mathematical thinking; 
+                    we start with a few simple assumptions (axioms) and we put them together 
+                    in creative ways to prove more complex and interesting theorems. 
+                     
+                    Similarly, games like chess, hex, and nim start with a few simple rules
+                    and these rules provide a framework inside of which players can express their creativity.  <br /> <br />
+                    
+                    Most things that mathematicians have "proven" true started out as mere common sense and intuition. 
+                    But mathematicians never accept something as true just becuse it seems to be common sense,
+                    rather, they have a long tradition of breaking ideas down and asking "How can we be sure?"
+                    
+                    If we are playing a game and I ask you, "What is the best move in this position?"
+                    you will probably have an idea that jumps out at you and seems like the <em>obvious</em>
+                    answer.  If you are really determined to win though, you will not make the first move
+                    that comes to mind, you will ask yourself, "How can I be sure this is the best move?" 
+                    Getting students to develop the habit of thinking in this simultaneously creatve and critical 
+                    way is a goal of most math classes, but it can be learned just as well (not to mention in a 
+                    more fun way) over a game of tic-tac-toe! 
                 </Typography>
                 
             </Box>
