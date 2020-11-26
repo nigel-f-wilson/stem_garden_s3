@@ -132,7 +132,7 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: '0.5rem',
     },
     desktopMenuDropDown: {
-        border: 'solid white 1px',
+        border: 'solid white 0.1px',
         backgroundColor: theme.palette.primary.main, // Matches Logo Background
     },
 }));

@@ -36,7 +36,7 @@ export default function TeachingServicesList() {
     const classes = useStyles();
     
     return (
-        <List className={classes.list}>
+        <React.Fragment className={classes.list}>
             <ListItem
                 key={'home'}
                 className={classes.listItem}
@@ -141,24 +141,24 @@ export default function TeachingServicesList() {
             </ListItem>
 
             <ListItem
-                key={'computer science'}
+                key={'Math Games'}
                 className={classes.listItem}
                 button
                 component={RouterLink}
-                to='/program'
+                to='/math_games'
             >
                 <Icon className="fas fa-laptop-code fa-2x"
                     classes={{ root: classes.icon }}
                 />
                 <ListItemText 
-                    primary={'Computer Science'}
+                    primary={'Math Games'}
                     primaryTypographyProps={{ variant: 'h5' }}
                 />
             </ListItem>
 
 
 
-            <ListItem
+            {/* <ListItem
                 key={'math_games'}
                 className={classes.listItem}
                 button
@@ -173,7 +173,7 @@ export default function TeachingServicesList() {
                     primary={'Math Games'}
                     primaryTypographyProps={{ variant: 'h5' }}
                 />
-            </ListItem>
+            </ListItem> */}
 
 
             <ListItem
@@ -193,23 +193,6 @@ export default function TeachingServicesList() {
                 />
             </ListItem>
 
-            {/* <ListItem
-                key={'teaching_philosophy'}
-                className={classes.listItem}
-                button
-                component={RouterLink}
-                // to='/teach/philosophy'
-                to='/teach'
-            >
-                <Icon className="fas fa-question fa-2x"
-                    classes={{ root: classes.icon }}
-                />
-                <ListItemText
-                    primary={'Teaching Philosophy'}
-                    primaryTypographyProps={{ variant: 'h5' }}
-                />
-            </ListItem> */}
-
-        </List>
+        </React.Fragment>
     );
 }

@@ -42,7 +42,7 @@ export default function GardenNavigationList() {
     const classes = useStyles();
 
     return (
-        <List className={classes.list}>
+        <React.Fragment className={classes.list}>
             
             <ListItem
                 key={'our_story'}
@@ -93,6 +93,6 @@ export default function GardenNavigationList() {
             </ListItem>
 
 
-        </List>
+        </React.Fragment>
     );
 }

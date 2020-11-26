@@ -77,14 +77,16 @@ export default function MobileMenu() {
         setState({ ...state, [anchor]: open });
     };
 
-    const list = (anchor) => (
+    const list = () => (
         <Box className={classes.list}
             role="presentation"
-            onClick={toggleDrawer(anchor, false)}
-            onKeyDown={toggleDrawer(anchor, false)}
+            onClick={toggleDrawer('right', false)}
+            onKeyDown={toggleDrawer('right', false)}
         >
-            <TeachingServicesList />
-            <GardenNavigationList />
+            <List>
+                <TeachingServicesList />
+                <GardenNavigationList />
+            </List>
         </Box>
     );
 
