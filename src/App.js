@@ -101,6 +101,7 @@ export default function App() {
 
                         <Route path="/my_projects">
                             <MyProjectsPage />
+                            {/* <MathGamesPage /> */}
                         </Route> 
 
                         {/* <Route path="/contact">
