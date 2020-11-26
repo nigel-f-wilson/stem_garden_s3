@@ -1,21 +1,17 @@
 import React from 'react';
-import {
-    Link as RouterLink,
-} from "react-router-dom";
+
+import clsx from 'clsx';
+import { spacing } from '@material-ui/system';
+
 
 // MY components
-// import PhotoGrid from "../components/GardenPhotoGrid";
 import Navbar from "../components/Navbar/Navbar";
-import SpacerBox from "../components/Navbar/SpacerBox"
 
 
-// MUI Imports
+// MUI CORE Imports
 import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-
-
-import clsx from 'clsx';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
@@ -24,10 +20,6 @@ import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-
-import { spacing } from '@material-ui/system';
-
-
 
 
 // MY images
@@ -102,36 +94,42 @@ const useStyles = makeStyles((theme) => ({
         // border: 'solid red 2px',
         height: 'auto',
         width: '100vw',
-        // minHeight: '100vh',
+        minHeight: '100vh',
         backgroundColor: theme.palette.common.black,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
     },
     container: {
-        // border: 'solid green 2px',
-        minHeight: '100vh',
+        // border: 'solid red 2px',
         height: 'auto',
+        minHeight: '100vh',
         backgroundColor: 'inherit',
         display: 'flex',
         flexDirection: 'column',
-        // justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        padding: '0.0rem 3.0rem',
+
     },
-    header: {
+    titleText: {
         color: theme.palette.common.white,
-        padding: '1.0rem 0.0rem',
+        padding: '4.0rem',
+    },
+    subtitleText: {
+        color: theme.palette.common.white,
+        padding: '2.0rem 4.0rem',
     },
     body: {
         color: theme.palette.common.white,
+        padding: '0.0rem 0.0rem',
         paddingBottom: '1.5rem',
-        maxWidth: '640px'
+        // maxWidth: '640px'
     },
-
     
     grid: {
         border: 'solid blue 1px',
         height: 'auto',
         width: '100%',
-        padding: '1rem'
-
     },
     card: {
         // maxWidth: 345,
@@ -164,42 +162,42 @@ const photoSetOne = [
         img: passionflower,
         title: 'Passion Flower',
         description: '',
-        gridCols: 2,
-        hideTitle: false,
+        gridCols: 4,
+        hideTitle: true,
     },
     {
         img: lime_harvest,
         title: 'Persian Limes',
         description: '',
-        gridCols: 2,
+        gridCols: 4,
         hideTitle: true,
     },
     {
         img: tomato_cuke_harvest,
         title: 'Spring Harvest',
         description: '',
-        gridCols: 2, 
+        gridCols: 4, 
         hideTitle: true,
     },
     {
         img: banana_papaya_top,
         title: 'Banana & Papaya Harvest',
         description: 'Being from Ohio originally I am perpetually thrilled to be able to grow tropical fruits like these outdoors. Technically, neither of these fruits comes from a tree even though we call them bannana trees and papaya trees. They are not woody plants and they cannot withstand a frost. For the past two years the temperature has not dropped below freezing in New Orleans.',
-        gridCols: 2,
+        gridCols: 4,
         hideTitle: true,
     },
     {
         img: gulf_fritilary,
         title: 'Gulf Fritilary',
         description: '',
-        gridCols: 2,
+        gridCols: 4,
         hideTitle: true,
     },
     {
         img: sunflower,
         title: 'Sunflower Blossom',
         description: '',
-        gridCols: 2,
+        gridCols: 4,
         hideTitle: true,
     },
 ];
@@ -492,25 +490,22 @@ function PageBody(props) {
     const classes = useStyles();
     return (
         <Box className={classes.root}>
-            <Container className={classes.container} maxWidth='md' >
-                <SpacerBox />
-                
-                <Typography className={classes.header} align='center' color='textPrimary' component='h1' variant='h1'>
-                    What We Grow
+            <Container className={classes.container} maxWidth='md' disableGutters>
+                <Typography className={classes.titleText} align='center' color='textPrimary' component='h1' variant='h1'>
+                    What's Growing?
                 </Typography>
                 <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
-                    I was inspired to garden by my early experiences foraging for wild edibles and my garden still shows many signs of this influence. 
-                    We have a few primary crops but the real focus is always on soil health, bio-diversity, and habitat creation. The STEM Garden is home 
-                    to several dozen species of fruit trees, edible flowers, medicinal herbs, and vegetables. While certain crops are planted in neat rows 
-                    and managed carefully, many other species are naturalized here and are allowed to grow wherever they volunteer, so a walk around the 
-                    garden always has a surprize in store!
+                    I got into gardening inspired by my early experiences foraging for wild edibles and
+                    my garden still shows many signs of this influence.  While certain crops are planted in neat rows 
+                    and managed carefully, many other species are naturalized here and are allowed to grow wherever they 
+                    volunteer. Because of this approach, a walk around the garden always has a surprize in store!
+                    The garden produces lots to eat, but productivity is never the top priority. My focus is always 
+                    on improving soil health, creating wildlife habitat, and increasing bio-diversity.
                 </Typography>
-                <Container style={{maxWidth: '700px'}} > 
-                    <PhotoGrid data={photoSetOne} />
-                </Container>
+                <PhotoGrid data={photoSetOne} />
+                
 
-
-                <Typography className={classes.header} align='center' color='textPrimary' component='h2' variant='h2'>
+                <Typography className={classes.subtitleText} align='center' color='textPrimary' component='h2' variant='h2'>
                     Banana
                 </Typography>
                 <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
@@ -519,12 +514,11 @@ function PageBody(props) {
                     Each stalk will bear fruit only once and then rot, but the root cluster survives and is constantly sending up new stalks to replace those that reach maturity.
                     Each day one of the bright red leaves of the "bell" opens to reveal a row of flowers that will turn into a "hand" of bananas. 
                 </Typography>
-                <Container style={{ maxWidth: '700px' }} >
-                    <PhotoGrid data={photoSetBanana} />
-                </Container>
+                <PhotoGrid data={photoSetBanana} />
 
 
-                <Typography className={classes.header} align='center' color='textPrimary' component='h2' variant='h2'>
+
+                <Typography className={classes.subtitleText} align='center' color='textPrimary' component='h2' variant='h2'>
                     Papaya
                 </Typography>
                 <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
@@ -532,12 +526,11 @@ function PageBody(props) {
                     improve shelflife. I usually leave the fruits on the trees until one or two days before they are ready to eat and this way they get much sweeter and more 
                     interesting flavor. Papaya is a key ingredient in my homegrown fruit smoothies. I sell papaya green, ripe, or frozen.
                 </Typography>
-                <Container style={{ maxWidth: '700px' }} >
-                    <PhotoGrid data={photoSetPapaya} />
-                </Container>
+                <PhotoGrid data={photoSetPapaya} />
 
 
-                <Typography className={classes.header} align='center' color='textPrimary' component='h2' variant='h2'>
+
+                <Typography className={classes.subtitleText} align='center' color='textPrimary' component='h2' variant='h2'>
                     Turmeric
                 </Typography>
                 <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
@@ -547,12 +540,11 @@ function PageBody(props) {
                     It keeps very well if it is dug up in the dry season, so each October I dig up all the turmeric, break the big root clusters into little pieces and replant 
                     some portion of them the same day. The roots that are kept sell for up to $20 per pound, whereas banana and papaya sell for less than $2 per pound.
                 </Typography>
-                <Container style={{ maxWidth: '700px' }} >
-                    <PhotoGrid data={photoSetTurmeric} />
-                </Container>
+                <PhotoGrid data={photoSetTurmeric} />
 
 
-                <Typography className={classes.header} align='center' color='textPrimary' component='h2' variant='h2'>
+
+                <Typography className={classes.subtitleText} align='center' color='textPrimary' component='h2' variant='h2'>
                     Other Crops
                 </Typography>
                 <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
@@ -562,24 +554,21 @@ function PageBody(props) {
                     state and made to wait around on a grocery store shelf. While I don't grow all my own food, I do eat something I grew everyday. Meal preparation always 
                     starts with a walk around the garden to see what needs to get used.
                 </Typography>
-                <Container style={{ maxWidth: '700px' }} >
-                    <PhotoGrid data={photoSetOtherCrops} />
-                </Container>
+                <PhotoGrid data={photoSetOtherCrops} />
 
 
-                <Typography className={classes.header} align='center' color='textPrimary' component='h2' variant='h2'>
+
+                <Typography className={classes.subtitleText} align='center' color='textPrimary' component='h2' variant='h2'>
                     Flowers
                 </Typography>
                 <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
                     I prefer to grow food and don't put a lot of energy into growing plants that are only ornamental, but there are many food bearing plants that also have  
                     beautiful flowers. Some plants I grow primarily for their flowers as a way to attract pollinators.  
                 </Typography>
-                <Container style={{ maxWidth: '700px' }} >
-                    <PhotoGrid data={photoSetFlowers} />
-                </Container>
+                <PhotoGrid data={photoSetFlowers} />
 
 
-                <Typography className={classes.header} align='center' color='textPrimary' component='h2' variant='h2'>
+                <Typography className={classes.subtitleText} align='center' color='textPrimary' component='h2' variant='h2'>
                     Wildlife
                 </Typography>
                 <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
@@ -588,12 +577,10 @@ function PageBody(props) {
                     garden was first getting started there were a lot of rats but as this urban micro-ecosystem has matured there have been fewer rats and more squirrels and opossum.
                     I don't do anything to encourage this wildlife to be here beside create a safe habitat.
                 </Typography>
-                <Container style={{ maxWidth: '700px' }} >
-                    <PhotoGrid data={photoSetWildlife} />
-                </Container>
+                <PhotoGrid data={photoSetWildlife} />
                 
                 
-                <Typography className={classes.header} align='center' color='textPrimary' component='h2' variant='h2'>
+                <Typography className={classes.subtitleText} align='center' color='textPrimary' component='h2' variant='h2'>
                     Early Days
                 </Typography>
                 <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
@@ -603,11 +590,9 @@ function PageBody(props) {
                     and composted 350 cubic yards of horse manure, grass clippings, and leaves. That's enough to cover the entire property in an 18-inch thick layer of organic matter 
                     before it all decomposed!
                 </Typography>
-                <Container style={{ maxWidth: '700px' }} >
-                    <PhotoGrid data={photoSetEarlyDays} />
-                </Container>
+                <PhotoGrid data={photoSetEarlyDays} />
                 
-                <Box className={classes.spacerBox} py={8}  >
+                <Box py={8}  >
                     PAGE BOTTOM SPACER BOX
                 </Box>
             </Container>
@@ -639,7 +624,6 @@ function PhotoGrid(props) {
 
 function SquarePhotoCard(props) {
     const classes = useStyles();
-
     const title = props.tileData.title;
 
     const [expanded, setExpanded] = React.useState(false);
