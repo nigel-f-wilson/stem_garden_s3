@@ -2,9 +2,6 @@ import React from 'react';
 
 // MY components
 import Navbar from "../components/Navbar/Navbar";
-import SpacerBox from "../components/Navbar/SpacerBox"
-// import LandingHeader from "../components/LandingHeader";
-// import LandingCards from "../components/LandingCards";
 
 // MY images
 import street_view_before from "../images/garden_before.jpg";
@@ -13,10 +10,6 @@ import street_view_before from "../images/garden_before.jpg";
 // MUI Imports
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
-import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
-
-
 
 import { makeStyles } from '@material-ui/core/styles';
 import { Typography, Grid } from '@material-ui/core';
@@ -41,16 +34,24 @@ const useStyles = makeStyles((theme) => ({
         // justifyContent: 'center',
         alignItems: 'center'
     },
+    titleText: {
+        color: theme.palette.common.white,
+        padding: '4.0rem',
+    },
+    subtitleText: {
+        color: theme.palette.common.white,
+        padding: '2.0rem 4.0rem',
+    },
     header: {
         color: theme.palette.common.white,
-        padding: '1.0rem 0.0rem',
+        padding: '0.0rem 0.0rem',
     },
     body: {
         color: theme.palette.common.white,
+        padding: '0.0rem 0.0rem',
         paddingBottom: '1.5rem',
-        maxWidth: '640px'
+        // maxWidth: '640px'
     },
-
 
     grid: {
         border: 'solid blue 1px',
@@ -101,8 +102,7 @@ function PageBody(props) {
     return (
         <Box className={classes.root}>
             <Container className={classes.container} maxWidth='md' >
-                <SpacerBox />
-                <Typography className={classes.header} align='center' color='textPrimary' component='h1' variant='h1'>
+                <Typography className={classes.titleText} align='center' color='textPrimary' component='h1' variant='h1'>
                     Our Story
                 </Typography>
                 <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
