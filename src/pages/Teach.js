@@ -29,13 +29,11 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
     },
     container: {
-        // border: 'solid green 2px',
-        minHeight: '100vh',
         height: 'auto',
+        minHeight: '100vh',
         backgroundColor: 'inherit',
         display: 'flex',
         flexDirection: 'column',
-        // justifyContent: 'center',
         alignItems: 'center'
     },
     titleText: {
@@ -50,17 +48,17 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.common.white,
         padding: '0.0rem 0.0rem',
     },
-    body: {
-        color: theme.palette.common.white,
-        padding: '0.0rem 0.0rem',
-        paddingBottom: '1.5rem',
-        // maxWidth: '640px'
-    },
-    summary: {
-        color: theme.palette.common.white,
-        paddingBottom: '0.7rem',
-        // maxWidth: '640px'
-    },
+    // body: {
+    //     color: theme.palette.common.white,
+    //     padding: '0.0rem 0.0rem',
+    //     paddingBottom: '1.5rem',
+    //     // maxWidth: '640px'
+    // },
+    // summary: {
+    //     color: theme.palette.common.white,
+    //     paddingBottom: '0.7rem',
+    //     // maxWidth: '640px'
+    // },
     tabs: {
         display: 'flex',
         flexDirection: 'column',
