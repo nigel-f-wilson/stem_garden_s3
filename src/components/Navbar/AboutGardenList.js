@@ -42,7 +42,7 @@ export default function GardenNavigationList() {
     const classes = useStyles();
 
     return (
-        <React.Fragment className={classes.list}>
+        <React.Fragment>
             
             <ListItem
                 key={'our_story'}

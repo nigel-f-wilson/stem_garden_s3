@@ -36,7 +36,7 @@ export default function TeachingServicesList() {
     const classes = useStyles();
     
     return (
-        <React.Fragment className={classes.list}>
+        <React.Fragment>
             <ListItem
                 key={'home'}
                 className={classes.listItem}
