@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     },
     titleText: {
         color: theme.palette.common.white,
-        padding: '4.0rem',
+        padding: '4.0rem, 0.0rem',
     },
     subtitleText: {
         color: theme.palette.common.white,
@@ -74,12 +74,41 @@ function PageBody(props) {
     const classes = useStyles();
     return (
         <Container className={classes.pageBody} maxWidth='md' >
-            <Typography className={classes.titleText} align='center' color='textPrimary' component='h1' variant='h1'>
+            <Typography className={classes.titleText} align='left' color='textPrimary' component='h3' variant='h3'>
+                Tic-Tac-Toe and the Fifteen Game
+            </Typography>
+            <Typography align='justify' color='secondary' component='h2' variant='body1' >
+                    Simple strategy games are full of oportunities to practice mathematical thinking.
+                    Both games of strategy and games of chance have something to teach us.
+
+                    The concept of Proof is the foundation of all mathematical thinking;
+                    we start with a few simple assumptions (axioms) and we put them together
+                    in creative ways to prove more complex and interesting theorems.
+
+                    Similarly, games like chess, hex, and nim start with a few simple rules
+                    and these rules provide a framework inside of which players can express their creativity.  <br /> <br />
+
+                    Most things that mathematicians have "proven" true started out as mere common sense and intuition.
+                    But mathematicians never accept something as true just becuse it seems to be common sense,
+                    rather, they have a long tradition of breaking ideas down and asking "How can we be sure?"
+
+                    If we are playing a game and I ask you, "What is the best move in this position?"
+                    you will probably have an idea that jumps out at you and seems like the <em>obvious</em>
+                    answer.  If you are really determined to win though, you will not make the first move
+                    that comes to mind, you will ask yourself, "How can I be sure this is the best move?"
+                    Getting students to develop the habit of thinking in this simultaneously creatve and critical
+                    way is a goal of most math classes, but it can be learned just as well (not to mention in a
+                    more fun way) over a game of tic-tac-toe!
+                </Typography>
+
+
+
+            {/* <Typography className={classes.titleText} align='center' color='textPrimary' component='h1' variant='h1'>
                 Math Games
             </Typography>
             <Box  p={4} >
                 <Typography align='justify' color='secondary' component='h2' variant='body1' >
-                    I love teaching mathematical thinking through the lens of simple games.  
+                    Simple strategy games are full of oportunities to practice mathematical thinking.  
                     Both games of strategy and games of chance have something to teach us.
                      
                     The concept of Proof is the foundation of all mathematical thinking; 
@@ -102,7 +131,7 @@ function PageBody(props) {
                     more fun way) over a game of tic-tac-toe! 
                 </Typography>
                 
-            </Box>
+            </Box> */}
             <Box className={classes.cardArea} >
                 <MathGamesCards />
             </Box>
