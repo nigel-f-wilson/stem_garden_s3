@@ -4,7 +4,7 @@ import {
 } from "react-router-dom";
 
 // MY images
-import fret_measuring from "../images/guitar_fret_spacing_crop1.jpg";
+import tic_tac_toe_screenshot from "../images/projects/tic_tac_toe_screenshot.JPG";
 // import balance_scale from "../images/balance_scale_waldorf.jpg";
 // import multiple_choice from "../images/multiple_choice_test.jpg";
 import banana_papaya_turmeric from "../images/landing_page/banana_papaya_turmeric.JPG";
@@ -16,6 +16,7 @@ import profile_pic from "../images/landing_page/profile_pic.JPG";
 // MUI Imports
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
+import Link from '@material-ui/core/Link';
 import Box from '@material-ui/core/Box';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -87,33 +88,32 @@ export default function LandingCards(props) {
                         <CardActionArea>
                             <CardMedia
                                 className={classes.cardImage}
-                                image={fret_measuring}
+                                image={tic_tac_toe_screenshot}
                                 alt="Student measuring a guitar"
                                 title="Student measuring a guitar"
                             />
                             <CardContent>
                                 <Typography component="h3" variant="h5" >
-                                    Teaching Services
+                                    Tic-Tac-Toe and the 15-Game
                                 </Typography>
                                 <Typography
                                     variant="body2"
                                     color="textPrimary"
                                 >
-                                    I am a licensed math teacher offering private tutoring in any K-12, AP, or university
-                                    math class. If you have fallen behind, want to get ahead, or
-                                    simply want to learn in a more fun and hands-on way, call today!
+                                    A math lesson taught through two games. Learn about mathematical proof and how math helps us see the hidden structures
+                                    beneath the messy and chaotic surface of the real-world, all while mastering two classic games!  
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
                         <CardActions>
                             <Button
-                                component={RouterLink}
-                                to='/teach'
+                                component={Link}
+                                href='https://nolastemgarden.github.io/tic-tac-toe-and-the-fifteen-game/#/'
                                 variant='contained'
                                 size="medium"
                                 color="primary"
                             >
-                                Learn More
+                                Play Now!
                             </Button>
                         </CardActions>
                     </Card>
