@@ -74,86 +74,49 @@ function PageBody(props) {
     const classes = useStyles();
     return (
         <Container className={classes.pageBody} maxWidth='md' >
-            <Typography className={classes.titleText} align='left' color='textPrimary' component='h3' variant='h3'>
+            <Typography className={classes.titleText} align='left' color='textPrimary' component='h3' variant='h3' gutterBottom>
                 Tic-Tac-Toe and the Fifteen Game
             </Typography>
-            <Typography className={classes.titleText} align='left' color='textPrimary' component='subtitle' variant='subtitle'>
-                A math lesson in two simple games.
-            </Typography>
+            
             <Typography className={classes.titleText} align='left' color='textPrimary' component='h4' variant='h4'>
-                Proof in Tic-Tac-Toe
+                Mathematical Proof and Tic-Tac-Toe
             </Typography>
-            <Typography align='justify' color='secondary' component='body1' variant='body1' >
-                Math is all about things that can be prooven with logic. 
-                A written proof is an expression of a mathematician's creativity in the same way a song is an expression of a musician's creativity.
-                To a trained eye, mathematical proofs have the potential to be stunningly beautiful, however, they often involve a lot of abstraction and formality, 
-                making them inaccessible to beginners. 
-                In creating this lesson, my first goal was to help students understand what it means to proove something. 
-                I wanted it to be accessible to very young students, with still developing arithmetic skills and no knowledge of algebra,
-                while also being interesting to advanced students
-                
-                writing a proofwhat it means to proove something.  by getting them to proove 
-                things about the g
-                
-                ()
-                I wanted to help young kids understand what it means to proove something
-                mathematically. How could this be related to a student with emerging arithmatic skills and no knowledge of algebra?
-                Through Tic-Tac-Toe! 
-                
-                
-                 though,   If we strip away the abstraction and formality though, good proofs 
-                
-                
-                I like to introduce students to the concept of proof through a concrete example: the game of Tic-Tac-Toe. 
-                Starting with nothing more than the rules of the game, young children left to play will discover the idea
-                of a double attack, a position where there are two unblocked two in a rows and a win on the next turn is guaranteed. <br />
-                
-                Once they have made this discovery, challenge them to proove something more complicated: That the player who goes 
-                second can always mount a successful defence. No matter what the first player does they cannot guarantee a win, 
-                unless the other player makes a 'mistake'. Exploring this game has a lot in common with the way math is done.
-                We start                 
-                
-                
+            <Typography align='justify' color='secondary' component='body1' variant='body1' gutterBottom >
+                Math is all about things that can be prooven using logic. 
+                In the same way a song is an expression of a musician's creativity, a written proof is an expression of a mathematician's creativity.
+                To the trained eye, mathematical proofs have the potential to be stunningly beautiful and elegant. 
+                However, they often involve a lot of abstraction and formality, making them inaccessible to beginners. 
+                This lesson introduces students to the concept of proof without depending on mathematical jargon or 
+                students having experience with algebra.  <br />
 
-                we can think backwards and proove that 
-                
-                In certain 
-                
-                
+                If you have played Tic-Tac-Toe much, you have probably observed that the player who goes first seems to have an advantage but the game 
+                usually ends in a draw. In the first part of this lesson, students take this casual observation to the 
+                next level, prooving that the game will <em>always</em> end in a draw unless one of the players makes a mistake and lets the other win.
+                To do this students will articulate a move-by-move plan for player two that anticipates every startegy player one might try to use and 
+                explains how player two can avoid losing.  Competitive games like Tic-Tac-Toe are a good medium for introducing proof because they make 
+                the student take the matter personally, it's not just true or false, it's win or lose.
+            </Typography>
 
+            <Typography className={classes.titleText} align='left' color='textPrimary' component='h4' variant='h4'>
+                Similarity Beneath the Surface
+            </Typography>
+            <Typography align='justify' color='secondary' component='body1' variant='body1' gutterBottom>
+                Many problems can be solved by adapting solutions that worked for other problems before. 
+                The first step in reusing a solution is realizing that the two problems fit the same pattern.
+                Often times two real-world problems will seem unrelated on their surfaces even though at a deeper level they are behaving according to the same pattern. 
+                Being familiar with common mathematical patterns makes you better at noticing when this is the case.
+
+                My second goal in creating this lesson was to get students to experience for themselves a situation where they are 
+                able to adapt and reuse their own solution to another problem. Once you have mastered Tic-Tac-Toe and written a complete strategy that lets you guarantee 
+                you will never lose, try playing the Fifteen Game. At first, you will probably think that these two games feel totally unalike.
+                You would never guess that by mastering one you had gotten any closer to mastering the other.  But you have!
+                Once you are familiar with the mechanics of the Fifteen Game, take a look at the lesson on Magic Squares, a mathematical curiosity first 
+                discovered in China about 4200 years ago. Equipped with this mathematical knowledge, you will soon realize that Tic-Tac-Toe and the Fifteen Game 
+                have a lot more in common that you thought!
             </Typography>
 
 
 
-            {/* <Typography className={classes.titleText} align='center' color='textPrimary' component='h1' variant='h1'>
-                Math Games
-            </Typography>
-            <Box  p={4} >
-                <Typography align='justify' color='secondary' component='h2' variant='body1' >
-                    Simple strategy games are full of oportunities to practice mathematical thinking.  
-                    Both games of strategy and games of chance have something to teach us.
-                     
-                    The concept of Proof is the foundation of all mathematical thinking; 
-                    we start with a few simple assumptions (axioms) and we put them together 
-                    in creative ways to prove more complex and interesting theorems. 
-                     
-                    Similarly, games like chess, hex, and nim start with a few simple rules
-                    and these rules provide a framework inside of which players can express their creativity.  <br /> <br />
-                    
-                    Most things that mathematicians have "proven" true started out as mere common sense and intuition. 
-                    But mathematicians never accept something as true just becuse it seems to be common sense,
-                    rather, they have a long tradition of breaking ideas down and asking "How can we be sure?"
-                    
-                    If we are playing a game and I ask you, "What is the best move in this position?"
-                    you will probably have an idea that jumps out at you and seems like the <em>obvious</em>
-                    answer.  If you are really determined to win though, you will not make the first move
-                    that comes to mind, you will ask yourself, "How can I be sure this is the best move?" 
-                    Getting students to develop the habit of thinking in this simultaneously creatve and critical 
-                    way is a goal of most math classes, but it can be learned just as well (not to mention in a 
-                    more fun way) over a game of tic-tac-toe! 
-                </Typography>
-                
-            </Box> */}
             <Box className={classes.cardArea} >
                 <MathGamesCards />
             </Box>
