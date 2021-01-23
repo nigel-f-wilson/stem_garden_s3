@@ -14,6 +14,7 @@ import profile_pic from "../images/landing_page/profile_pic.JPG";
 
 
 // MUI Imports
+import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
@@ -46,11 +47,11 @@ const useStyles = makeStyles((theme) => ({
         // paddingTop: '56.25%', // 16:9
         // width: '100%',
     },
-    cardButtonArea: {
-        height: { cardHeight },
+    
+    flexColumn: {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-around'
+        
     }
 
 }));
@@ -75,27 +76,21 @@ export default function LandingCards(props) {
                                 alt="Student measuring a guitar"
                                 title="Student measuring a guitar"
                             />
-                            <CardContent>
-                                <Typography component="h3" variant="h5" >
+                            {/* <CardContent> */}
+                            <Box p={1.5} >
+                                <Typography color="textSecondary" component="h3" variant="h5" gutterBottom >
                                     Teaching Services
                                 </Typography>
-                                <Typography
-                                    variant="body2"
-                                    color="textPrimary"
-                                >
-                                    I am a licensed math teacher offering private tutoring in any K-12, AP, or university
-                                    math class. I also teach chess, SAT/ACT test prep, and offer hands-on math enrichment.
+                                <Typography variant="body2" color="textSecondary" >
+                                    I offer private tutoring in K-12, AP, and college level math classes,
+                                    as well as chess lessons, SAT/ACT test prep, and hands-on math enrichment.
                                 </Typography>
-                            </CardContent>
+                            </Box>
+                                
+                            {/* </CardContent> */}
                         </CardActionArea>
                         <CardActions>
-                            <Button
-                                component={RouterLink}
-                                to='/teach'
-                                variant='contained'
-                                size="medium"
-                                color="primary"
-                            >
+                            <Button component={RouterLink} to='/teach' variant='contained' size="medium" color="primary" >
                                 Learn More
                             </Button>
                         </CardActions>
@@ -113,46 +108,63 @@ export default function LandingCards(props) {
                                 image={banana_papaya_turmeric}
                                 title="Homegrown Bananas and Papayas"
                             />
-                            <CardContent>
-                                <Typography component="h3" variant="h5" >
+                            <Box p={1.5} >
+                                <Typography color="textSecondary" component="h3" variant="h5" gutterBottom  >
                                     About the Garden
                                 </Typography>
-                                <Typography
-                                    variant="body2"
-                                    color="textPrimary"
-                                >
-                                    Established in 2016, the garden started as a blighted lot and gradually 
-                                    evolved into an oasis of turmeric and fruit trees.  
-                                     
+                                <Typography color="textSecondary" variant="body2" color="textSecondary" >
+                                    Established in 2016, the garden started as a blighted lot and gradually
+                                    evolved into an oasis of turmeric and fruit trees.
                                 </Typography>
-                            </CardContent>
+                            </Box>
                         </CardActionArea>
-                        <CardActions className={classes.cardButtons} >
-                            <Button
-                                component={RouterLink}
-                                to='/our_story'
-                                variant='contained'
-                                size="medium"
-                                color="primary"
-                            >
+                        <CardActions className={classes.flexColumn} >
+                            <Button component={RouterLink} to='/our_story' variant='contained' size="medium" color="primary"   >
                                 Our Story
-                            </Button>
-                            <Button
-                                component={RouterLink}
-                                to='/photo_gallery'
-                                variant='contained'
-                                size="medium"
-                                color="primary"
-                            >
+                            </Button> 
+                            {/* <Button component={RouterLink} to='/photo_gallery' variant='contained' size="medium" color="primary" >
                                 Photo Gallery
-                            </Button>
+                            </Button> */}
                         </CardActions>
                     </Card>
                 </Grid>
 
 
-                {/* CHESS CLUBS and LESSONS */}
-                {/* <Grid item xs={12} sm={4} >
+                {/* MEET NIGEL */}
+                <Grid item xs={12} sm={4} >
+                    <Card className={classes.card}>
+                        <CardActionArea>
+                            <CardMedia className={classes.cardImage} image={profile_pic} title="founder's profile picture" alt="founder's profile picture" />
+                            <Box p={1.5} >
+                                <Typography color='textSecondary' variant="h5" component="h2" gutterBottom >
+                                    Meet Nigel
+                                </Typography>
+                                <Typography color="textSecondary" variant="body2"  >
+                                    I am a jack of all trades. I rejoice in learning about sustainability, technology, and in helping kids see the world from new perspectives.
+                                </Typography>
+                            </Box>
+                        </CardActionArea>
+                        <CardActions className={classes.flexColumn}  >
+                            <Button component={RouterLink} to='/about_me' variant='contained' size="medium" color="primary"  >
+                                About Me
+                            </Button>
+                            {/* <Button component={RouterLink} to='/my_projects' variant='contained' size="medium" color="primary"  >
+                                My Projects
+                            </Button> */}
+                        </CardActions>
+                    </Card>
+                </Grid>
+            </Grid>
+        </Container>
+
+        
+
+    )
+
+}
+
+{/* CHESS CLUBS and LESSONS */ }
+{/* <Grid item xs={12} sm={4} >
                     <Card className={classes.card}>
                         <CardActionArea>
                             <CardMedia
@@ -198,58 +210,3 @@ export default function LandingCards(props) {
                         </CardActions>
                     </Card>
                 </Grid> */}
-               
-
-                {/* MEET NIGEL */}
-                <Grid item xs={12} sm={4} >
-                    <Card className={classes.card}>
-                        <CardActionArea>
-                            <CardMedia
-                                className={classes.cardImage}
-                                image={profile_pic}
-                                title="founder's profile picture"
-                                alt="founder's profile picture"
-                            />
-                            <CardContent>
-                                <Typography variant="h5" component="h2">
-                                    Meet Nigel
-                            </Typography>
-                                <Typography 
-                                    variant="body2"
-                                    color="textPrimary"
-                                >
-                                    I am a jack of all trades who rejoices in helping kids see the world from new points of view.
-                                    Get to know me by checking out some of my projects besides gardening and teaching!
-                            </Typography>
-                            </CardContent>
-                        </CardActionArea>
-                        <CardActions>
-                            <Button
-                                component={RouterLink}
-                                to='/about_me'
-                                variant='contained'
-                                size="medium"
-                                color="primary"
-                            >
-                                About Me
-                        </Button>
-                            <Button
-                                component={RouterLink}
-                                to='/my_projects'
-                                variant='contained'
-                                size="medium"
-                                color="primary"
-                            >
-                                My Projects
-                        </Button>
-                        </CardActions>
-                    </Card>
-                </Grid>
-            </Grid>
-        </Container>
-
-        
-
-    )
-
-}
