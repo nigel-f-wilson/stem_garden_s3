@@ -16,7 +16,6 @@ import profile_pic from "../images/landing_page/profile_pic.JPG";
 // MUI Imports
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
@@ -31,18 +30,9 @@ import { makeStyles } from '@material-ui/core/styles';
 const cardHeight = '1000px';
 
 const useStyles = makeStyles((theme) => ({
-    gridContainer: {
-        display: 'flex',
-        justifyContent: 'center'
-    },
     card: {
         height: '100%',
         width: '100%',
-        // color: theme.palette.common.white,
-        // backgroundColor: theme.palette.common.black,
-        // backgroundColor: theme.palette.common.white,
-        // backgroundColor: theme.palette.primary.light,
-        // backgroundColor: '#444',
         backgroundColor: '#ddd',
         padding: '0px',
         display: 'flex',
@@ -74,15 +64,9 @@ export default function LandingCards(props) {
             className={classes.mobileCardGrid}
             maxWidth='md'
         >
-            <Grid container
-                className={classes.gridContainer}
-                id='grid'
-                spacing={3}
-
-            >
-
+            <Grid container spacing={3} >
                 {/* TEACHING SERVICES */}
-                <Grid item xs={12} sm={6} >
+                <Grid item xs={12} sm={4} >
                     <Card className={classes.card} raised>
                         <CardActionArea>
                             <CardMedia
@@ -100,8 +84,7 @@ export default function LandingCards(props) {
                                     color="textPrimary"
                                 >
                                     I am a licensed math teacher offering private tutoring in any K-12, AP, or university
-                                    math class. If you have fallen behind, want to get ahead, or
-                                    simply want to learn in a more fun and hands-on way, call today!
+                                    math class. I also teach chess, SAT/ACT test prep, and offer hands-on math enrichment.
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
@@ -121,7 +104,7 @@ export default function LandingCards(props) {
 
 
                 {/* ABOUT THE GARDEN */}
-                <Grid item xs={12} sm={6} >
+                <Grid item xs={12} sm={4} >
                     <Card className={classes.card}>
                         <CardActionArea>
                             <CardMedia
@@ -169,7 +152,7 @@ export default function LandingCards(props) {
 
 
                 {/* CHESS CLUBS and LESSONS */}
-                <Grid item xs={12} sm={6} >
+                {/* <Grid item xs={12} sm={4} >
                     <Card className={classes.card}>
                         <CardActionArea>
                             <CardMedia
@@ -214,11 +197,11 @@ export default function LandingCards(props) {
                             </Button>
                         </CardActions>
                     </Card>
-                </Grid>
+                </Grid> */}
                
 
                 {/* MEET NIGEL */}
-                <Grid item xs={12} sm={6} >
+                <Grid item xs={12} sm={4} >
                     <Card className={classes.card}>
                         <CardActionArea>
                             <CardMedia
