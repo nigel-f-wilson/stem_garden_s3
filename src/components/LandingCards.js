@@ -90,7 +90,13 @@ export default function LandingCards(props) {
                             {/* </CardContent> */}
                         </CardActionArea>
                         <CardActions>
-                            <Button component={RouterLink} to='/teach' variant='contained' size="medium" color="primary" >
+                            <Button component={RouterLink} variant='contained' size="medium" color="primary"
+                                to={{
+                                    pathname: '/teach',
+                                    state: {
+                                        selectedTab: 'tutoring',
+                                    }
+                                }} >
                                 Learn More
                             </Button>
                         </CardActions>
