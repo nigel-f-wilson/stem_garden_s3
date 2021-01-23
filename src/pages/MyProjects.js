@@ -2,7 +2,6 @@ import React from 'react';
 
 // MY components
 import Navbar from "../components/Navbar/Navbar";
-import MyProjectsHeader from "../components/MyProjectsHeader";
 import ProjectCards from "../components/ProjectCards";
 
 // MY images
