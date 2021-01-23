@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
         `,
         backgroundPosition: 'center top',
         backgroundRepeat: 'repeat-y',
-        backgroundSize: 'contain',
+        backgroundSize: 'cover',
     },
     desktopBody: {
         // border: 'solid red 1px',
@@ -71,15 +71,12 @@ const useStyles = makeStyles((theme) => ({
 
     titleText: {
         // border: 'solid red 1px',
-        color: theme.palette.common.white,
-        maxWidth: '100%',
         padding: '4.0rem 3.0rem',
         textShadow: '0.15rem 0.15rem 0.3rem black',
-        fontSize: 'min(2.5rem, 7vw)'
+        fontSize: 'min(2.5rem, 8vw)'
     },
     subtitleText: {
-        color: theme.palette.common.white,
-        padding: '0rem 4rem',
+        padding: '0.0rem 4.0rem',
         textShadow: '0.12rem 0.12rem 0.20rem black',
     },
     cardArea: {
@@ -109,13 +106,7 @@ function MobileBody(props) {
             className={classes.mobileBody}
             display={{ xs: 'block', md: 'none' }}  
         >
-            <Typography
-                className={classes.titleText}
-                align='center'
-                color='textPrimary'
-                component='h1'
-                variant='h2'
-            >
+            <Typography className={classes.titleText} align='center' color='textPrimary' component='h1' variant='h2' >
                 Sowing the seeds of life&#8209;long learning and DIY&#8209;spirit
                 through hands&#8209;on teaching of math, physics, chess, biology,
                 and programming.
