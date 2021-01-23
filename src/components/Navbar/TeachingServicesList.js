@@ -37,7 +37,7 @@ export default function TeachingServicesList() {
     
     return (
         <React.Fragment>
-            <ListItem
+            {/* <ListItem
                 key={'home'}
                 className={classes.listItem}
                 button
@@ -51,7 +51,7 @@ export default function TeachingServicesList() {
                     primary={'Home'}
                     primaryTypographyProps={{ variant: 'h5' }}
                 />
-            </ListItem>
+            </ListItem> */}
 
             <ListItem
                 key={'tutoring services'}
