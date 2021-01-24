@@ -7,7 +7,7 @@ import React from 'react';
 
 // MY COMPONENTS
 import MobileMenu from "./MobileMenu";
-import TeachingServicesList from "./TeachingServicesList";
+import TeachDropdown from "./TeachDropdown";
 import AboutGardenList from "./AboutGardenList";
 import SpacerBox from "./SpacerBox";
 
@@ -210,15 +210,14 @@ function DesktopNavbar(props) {
 
                     <Box className={classes.desktopMenuButtons} >
                         
-                        <TeachingServicesMenu />
+                        <TeachDropdown />
 
                         <GardenAboutMenu />
 
                         <ContactPageLink />
 
                     </Box>
-                    
-                    
+                     
                 </Container>
             </AppBar>
             
@@ -229,83 +228,7 @@ function DesktopNavbar(props) {
 
 
 
-function TeachingServicesMenu() {
-    const classes = useStyles();
-    const [open, setOpen] = React.useState(false);
-    const anchorRef = React.useRef(null);
 
-    const handleToggle = () => {
-        setOpen((prevOpen) => !prevOpen);
-    };
-
-    const handleClose = (event) => {
-        if (anchorRef.current && anchorRef.current.contains(event.target)) {
-            return;
-        }
-        setOpen(false);
-    };
-
-    function handleListKeyDown(event) {
-        if (event.key === 'Tab') {
-            event.preventDefault();
-            setOpen(false);
-        }
-    }
-
-    // return focus to the button when we transitioned from !open -> open
-    const prevOpen = React.useRef(open);
-    React.useEffect(() => {
-        if (prevOpen.current === true && open === false) {
-            anchorRef.current.focus();
-        }
-
-        prevOpen.current = open;
-    }, [open]);
-
-    return (
-        <Box className={classes.teachingServicesMenu}>
-            <Button
-                className={classes.desktopMenuButton}
-                variant="text"
-                ref={anchorRef}
-                aria-controls={open ? 'menu-list-grow' : undefined}
-                aria-haspopup="true"
-                onClick={handleToggle}
-            >
-                <Typography variant="h5">
-                    Teaching<br />Services
-                </Typography>
-
-            </Button>
-            <Popper 
-                open={open} 
-                anchorEl={anchorRef.current} 
-                role={undefined} 
-                transition 
-                disablePortal
-            >
-                {({ TransitionProps }) => (
-                    <Grow
-                        {...TransitionProps}
-                        style={{ transformOrigin: 'center top' }}
-                    >
-                        <Paper className={classes.desktopMenuDropDown}>
-                            <ClickAwayListener onClickAway={handleClose}>
-                                
-                                <MenuList autoFocusItem={open} 
-                                    id="menu-list-grow" 
-                                    onKeyDown={handleListKeyDown}
-                                >
-                                    <TeachingServicesList />
-                                </MenuList>
-                            </ClickAwayListener>
-                        </Paper>
-                    </Grow>
-                )}
-            </Popper>
-        </Box>
-    );
-}
 
 function GardenAboutMenu() {
     const classes = useStyles();
