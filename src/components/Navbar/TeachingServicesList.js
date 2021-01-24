@@ -32,31 +32,17 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-export default function TeachingServicesList() {
+export default function TeachingServicesList(props) {
     const classes = useStyles();
-    
+    const handleClose = props.handleClose
+
     return (
         <React.Fragment>
-            {/* <ListItem
-                key={'home'}
-                className={classes.listItem}
-                button
-                component={RouterLink}
-                to='/'
-            >
-                <Icon className={"fas fa-home fa-2x"}
-                    classes={{ root: classes.icon }}
-                />
-                <ListItemText
-                    primary={'Home'}
-                    primaryTypographyProps={{ variant: 'h5' }}
-                />
-            </ListItem> */}
-
             <ListItem
                 key={'tutoring services'}
                 className={classes.listItem}
                 button
+                onClick={handleClose}
                 component={RouterLink}
                 to={{
                     pathname: '/teach',
@@ -79,6 +65,7 @@ export default function TeachingServicesList() {
                 key={'stem enrichment'}
                 className={classes.listItem}
                 button
+                onClick={handleClose}
                 component={RouterLink}
                 to={{
                     pathname: '/teach',
@@ -100,6 +87,7 @@ export default function TeachingServicesList() {
                 key={'chess lessons'}
                 className={classes.listItem}
                 button
+                onClick={handleClose}
                 component={RouterLink}
                 // to='/teach/chess'
                 to={{
@@ -122,6 +110,7 @@ export default function TeachingServicesList() {
                 key={'test prep'}
                 className={classes.listItem}
                 button
+                onClick={handleClose}
                 component={RouterLink}
                 to={{
                     pathname: '/teach',
@@ -144,6 +133,7 @@ export default function TeachingServicesList() {
                 key={'Math Games'}
                 className={classes.listItem}
                 button
+                onClick={handleClose}
                 component={RouterLink}
                 to='/math_games'
             >
@@ -162,6 +152,7 @@ export default function TeachingServicesList() {
                 key={'math_games'}
                 className={classes.listItem}
                 button
+                onClick={handleClose}
                 component={RouterLink}
                 // to='/teach/math_games'
                 to='/teach'
@@ -180,6 +171,7 @@ export default function TeachingServicesList() {
                 key={'puzzle_collection'}
                 className={classes.listItem}
                 button
+                onClick={handleClose}
                 component={RouterLink}
                 // to='/teach/puzzles'
                 to='/teach'
@@ -196,3 +188,21 @@ export default function TeachingServicesList() {
         </React.Fragment>
     );
 }
+
+
+{/* <ListItem
+    key={'home'}
+    className={classes.listItem}
+    button
+    onClick={handleClose}
+    component={RouterLink}
+    to='/'
+>
+    <Icon className={"fas fa-home fa-2x"}
+        classes={{ root: classes.icon }}
+    />
+    <ListItemText
+        primary={'Home'}
+        primaryTypographyProps={{ variant: 'h5' }}
+    />
+</ListItem> */}
