@@ -38,8 +38,9 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-export default function GardenNavigationList() {
+export default function GardenNavigationList(props) {
     const classes = useStyles();
+    const handleClose = props.handleClose
 
     return (
         <React.Fragment>
@@ -48,6 +49,7 @@ export default function GardenNavigationList() {
                 key={'our_story'}
                 className={classes.listItem}
                 button
+                onClick={handleClose}
                 component={RouterLink}
                 to='/our_story'
             >
@@ -64,6 +66,7 @@ export default function GardenNavigationList() {
                 key={'gallery'}
                 className={classes.listItem}
                 button
+                onClick={handleClose}
                 component={RouterLink}
                 to='/photo_gallery'
             >
@@ -80,6 +83,7 @@ export default function GardenNavigationList() {
                 key={'for_sale'}
                 className={classes.listItem}
                 button
+                onClick={handleClose}
                 component={RouterLink}
                 to='/produce_for_sale'
             >
