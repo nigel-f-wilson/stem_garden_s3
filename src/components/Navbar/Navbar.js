@@ -2,7 +2,7 @@ import React from 'react';
 // import '../../App.css';
 
 // React ROUTER
-// import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 
 // MY COMPONENTS
@@ -21,11 +21,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from '@material-ui/core/Typography';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Grow from '@material-ui/core/Grow';
-import Paper from '@material-ui/core/Paper';
-import Popper from '@material-ui/core/Popper';
-import MenuList from '@material-ui/core/MenuList';
+
 
 
 import { makeStyles } from '@material-ui/core/styles';
@@ -115,7 +111,9 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'column',
         justifyContent: 'flex-end',
         fontSize: '2rem',
-        lineHeight: '2.2rem'
+        lineHeight: '2.2rem',
+        color: theme.palette.common.white,
+        "text-decoration": ''
     },
     desktopMenuButtons: {
         // border: 'solid blue 1px',
@@ -123,18 +121,12 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'flex-end',
-        // paddingRight:'2.5rem'
+        
     },
-    desktopMenuButton: {
-        color: theme.palette.common.white,
+    contactButton: {
         textTransform: "none",
-        textAlign: 'center',
-        paddingBottom: '0.5rem',
     },
-    desktopMenuDropDown: {
-        border: 'solid white 0.1px',
-        backgroundColor: theme.palette.primary.main, // Matches Logo Background
-    },
+    
 }));
 
 
@@ -204,7 +196,7 @@ function DesktopNavbar(props) {
                     maxWidth='md'
                 >
                     <Box className={classes.desktopLogo} />
-                    <Box className={classes.desktopBrand} >
+                    <Box className={classes.desktopBrand} component={RouterLink} to='/' style={{ textDecoration: 'none' }} >
                         STEM <br />Garden
                     </Box>
 
@@ -241,9 +233,8 @@ function ContactPageLink() {
         // className={classes.desktopMenuButton}
         >
             <Button
-                className={classes.desktopMenuButton}
+                className={classes.contactButton}
                 variant="text"
-                
             >
                 <Typography variant="h5">
                     Contact
