@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 
 // MY components
-import Navbar from "../../components/Navbar/Navbar";
+import Navbar from "../components/Navbar/Navbar";
 
 // MY images
 
