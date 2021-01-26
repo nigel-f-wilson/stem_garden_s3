@@ -6,7 +6,7 @@ import React from 'react';
 
 
 // MY COMPONENTS
-import AboutGardenList from "./AboutGardenList";
+import GardenNavList from "./GardenNavList";
 
 // Image Imports
 
@@ -97,7 +97,7 @@ export default function GardenDropdown() {
                         <Paper className={classes.dropdownSurface}  >
                             <ClickAwayListener onClickAway={handleClickAway}>
                                 <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                                    <AboutGardenList 
+                                    <GardenNavList
                                         handleClose={handleClose}
                                     />
                                 </MenuList>
