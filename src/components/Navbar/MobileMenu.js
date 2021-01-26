@@ -2,14 +2,12 @@ import React from 'react';
 
 // MY components
 import TeachingServicesList from "./TeachingServicesList";
-import GardenNavigationList from "./AboutGardenList";
+import GardenNavigationList from "./GardenNavList";
 
 // React ROUTER
-import { Link as RouterLink } from "react-router-dom";
+// import { Link as RouterLink } from "react-router-dom";
 
-
-
-import clsx from 'clsx';
+// import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
 
 // MATERIAL-UI COMPONENTS
@@ -17,18 +15,9 @@ import Box from '@material-ui/core/Box';
 import Drawer from '@material-ui/core/Drawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import Icon from '@material-ui/core/Icon';
-
-// MATERIAL-UI SYSTEM
-import { fontSize } from '@material-ui/system';
 
 // ICONS
 import MenuIcon from '@material-ui/icons/Menu';
-
 
 const useStyles = makeStyles(theme => ({
     list: {
