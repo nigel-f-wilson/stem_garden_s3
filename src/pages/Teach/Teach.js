@@ -488,122 +488,87 @@ function ChessTabContent() {
     return (
         <React.Fragment>
             <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-                Lessons, Afterschool Clubs, Chess in the Garden
+                Private and Group Lessons
             </Typography>
             <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
-                *** All in-person clubs are temporarily cancelled due to Covid-19 *** <br />
-                I offer pprivate lessons and small group coaching both online and in person.
-                I offer lessons designed for parents who are new to chess but have a child whose taken an interest.
-
-
+                I offer private lessons and small group coaching both online and in person.
+                While you can practice playing chess against opponents of similar skill online any time, it is more fun when you have a partner 
+                who you can play with regularly over the board. Group lessons are great for siblings, neighbors, or kids who homeschool together.
+                They enable you and your practice partner to grow together, so that your matches remain challenging and exciting as you improve.
+                I also offer lessons specifically for parents who are new to chess but have a child who has taken an interest. 
             </Typography>
-
+            <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
+                Chess Club in the Garden
+            </Typography>
+            <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
+                *** All in-person clubs are suspended until further notice due to Covid-19 *** <br />
+                When safe, chess in the garden will be offered every Sunday afternoon from 2-4pm
+                I will be launching a Sunday afternoon chess club in the STEM Garden as soon as it is safe to do so.
+            </Typography>
             <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
                 Afterschool Clubs
             </Typography>
             <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
-                *** All in-person clubs are temporarily cancelled due to Covid-19 *** <br />
+                *** All in-person clubs are suspended until further notice due to Covid-19 *** <br />
                 I currently host an afterschool chess club in partnership with the Waldorf School of New Orleans.
-                I will be launching a Sunday afternoon chess club in the STEM Garden as soon as it is safe to do so.
-                I am currently seeking new schools to partner with to establish new afterschool chess clubs.
+                I am currently seeking schools to partner with to establish new afterschool chess clubs.
                 Need help establishing a chess club at your school? Call me!
             </Typography>
-            <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-
-            </Typography>
-            <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
-                *** All in-person clubs are temporarily cancelled due to Covid-19 *** <br />
-                I currently host an afterschool chess club in partnership with the Waldorf School of New Orleans.
-                I will be launching a Sunday afternoon chess club in the STEM Garden as soon as it is safe to do so.
-                I am currently seeking new schools to partner with to establish new afterschool chess clubs.
-                Need help establishing a chess club at your school? Call me!
-            </Typography>
-            <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-                Chess & Test Prep
-            </Typography>
-            <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
-                When I worked at College Track there was a strong emphasis on Test Prep. I reflected on my own experience.
-
-            </Typography>
+            
             <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
                 Why Learn Chess?
             </Typography>
             <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
                 Learning chess helps kids experience firsthand that thinking hard and having fun can go together. <br />
-                Math and Chess have a lot in common. They both require us to think creatively
-                yet to be disiplined and thorough at the same time. <br /><br />
-
-                Math is very useful, and so there has come to be a lot of pressure on kids to do well in math class. And this
-                pressure makes it hard to remember that doing math can be fun. Students don't generally ask the questions "Why do I <em>have to</em> learn this? 
-                When am I going to <em>need</em> this?" until they are feeling pressured. <br /><br />
+                Math and Chess have a lot in common. They both require creative, yet disiplined, thinking. 
+                Math is very useful, and so kids are required to learn it in school. Unfortunately, that pressure to learn 
+                math often causes them to lose sight of the fact that doing math can be really fun. When students feel under pressure 
+                in math classes they start asking "Why do I <em>have to</em> learn this?" and "When am I going to <em>need</em> this?" <br /><br />
 
                 By contrast, Chess is an abstract game with no practical applications.  No one is required to learn it,
-                yet, something about it makes kids feel drawn to apply their full rational abilities.
-                Chess makes kids <em>want</em> to think hard.  <br /><br />
-
-                Getting my students to <em>think out loud</em> enables me to tailor the guidance I offer to make it most
-                relvant to them. For many kids who struggle with this in the context of math tutoring, chess has an
-                almost magical ability to draw them out of their shells and to get them to verbalize their thoughts,
-                making them more effective students all around. <br /><br />
-
-                Getting good at chess requires more than just studying board positions.
-                You must also develop your self-awareness and adopt certain habits of mind.
-                Even if chess itself has no practical applications, the thought-habits that
-                you develop over the board will make you a more effective thinker and will
-                be valuable habits to possess in whatever you pursue.
+                and yet, something about it makes kids feel drawn to apply their full reasoning abilities.
+                No one has ever inturrupted a chess lesson to ask me "When am I going to <em>need</em> this?"
+                Chess makes kids <em>want</em> to think hard.  It is an excellent medium for teaching kids to 
+                think out loud and to think through questioning, both skills which carry over and make them more effective 
+                learners in all other subjects. including math. Players also develop greater self-awareness about how their 
+                emotions affect their thinking process
             </Typography>
-
+            
             <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
                 Pricing
             </Typography>
             <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
-                Chess lessons are priced on a sliding scale. <br />
-                Private lessons are offered for $25-50 per hour. <br />
-                Lessons for 2 to 4 students are offered for $40-100 per hour. <br />
-                Lessons for 5 to 8 students are offered for $60-120 per hour. <br /> <br />
-                Sunday Chess Club in the garden is offered with a suggested donation of $5-10. <br /> <br />
-                The cost for facilitating afterschool clubs can be negotiated on a case by case basis. <br />
+                Chess lessons are priced on a sliding scale, please pay according to your means. <br />
+                <ul>
+                    <li>Private lessons are offered for $25-50 per hour. </li>
+                    <li>Lessons for 2 to 4 students are offered for $40-80 per hour.</li>
+                    <li>Lessons for 5 to 8 students are offered for $60-100 per hour. </li>
+                    <li>Sunday Chess Club in the garden is offered with a suggested donation of $5-10.</li>
+                    <li>The cost for facilitating afterschool clubs can be negotiated on a case by case basis.</li>
+                </ul>
                 As with math tutoring services, I want chess lessons to be accessible to any motivated student.
-                For anyone unable to pay in dollars, I am happy to barter or make work-trade agreements.
+                If money is what's holding you back from chess lessons, I am happy to barter or make work-trade agreements.
             </Typography>
             <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-                My Experience & Ranking
+                Chess Teaching Experience
             </Typography>
             <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
-                I have played chess for 18 years and I am currently rated ~1600,
-                or in the 90th percentile of players on chess.com.
-                I'm a long way from the pros rankings but I have a knack for explaining the game.
+                I have played chess for 18 years and I am currently rated ~1600, or in the 90th percentile of players on chess.com.
+                I'm a long way from the title of 'Master' but I have a knack for explaining the game. At the club I went to as a kid 
+                I was encouraged to play 'teaching games' with other kids as soon as I had something to teach, so I've been teaching 
+                chess even longer than I've been teaching math! <br /> Besides establishing chess clubs at College Track and the 
+                Waldorf School I have taught chess summer camps offered by Strategic Thoughts in partnership with NORD.
             </Typography>
             <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-                Pricing
+                Chess & Test Prep
             </Typography>
-            <Typography align='justify' color='textPrimargutterBottom y' component='p' variant='body1'>
-                For private tutoring with students in grade school and high school I charge $40 per hour.
-                For private tutoring with students in taking Calculus, AP, and College level classes I charge $55 per hour.
-                Prices for small group tutoring will be negotiated on a case by case basis.
-                Discounted rates on tutoring services are available for adding on chess lessons or math enrichment.
-                Students who commit to two or more hours of tutoring per week will also recieve support between lessons via text meassage.
-            </Typography>
-            <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-                My Math Teaching Experience
-            </Typography>
-            <Typography align='justify' color='textPrimargutterBottom y' component='p' variant='body1'>
-                I earned my degree in math education from Ohio University in 2015. While working toward my degree I completed several internships in
-                rural and inner city public schools in Ohio. For my final semester-long teaching internship I lived in New Delhi, India and taught at
-                Step-By-Step School.  In 2016, I moved from Ohio to New Orleans to launch my teaching career at Einstein Middle School.
-                Within a few months of moving I purchassed a blighted vacant lot and began the long process of cleaning it up and
-                transforming it into the STEM Garden. Throughout the next two years I spent my mornings developing the garden and taught math and physics
-                at College Track, an afterschool program for aspiring first generation college students.
-                After College Track, I took a break from classroom-based teaching. Students are full of questions about the "real-world" uses for the math
-                they are taught in school so it serves a math teacher well to have some personal experience using math in the "real-world".
-                I worked as farm manager for Recirculating Farms Coaltion and got to learn a lot about aquaponics and the math required to run
-                the business side of a small farm. I also worked as an electrician's assistant with Ziemba Electric and Atlas Electric.
-                I already had some text-book understanding of electrical circuits, but through this experience I learned how to go from theory
-                all the way through to craftsmanlike installations.
-                During the 2019-2020 school year I was back in the classroom, working as the math specialist at the Waldorf School of New Orleans.
-                I designed curriculum and taught math to students in grades 4-8. I taught through the transition to remote learning, but at the end
-                of the year the school had to downsize. Throughout the previous four years I had taken occasional gigs as a free lance in-home math tutor but
-                the pandemic pushed me to take that business online and it has been growing steadily since.
+            <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
+                I got serious about running youth chess clubs while working at College Track. CT placed a strong emphasis on preping kids for
+                fast-paced high-stakes standardized tests. I reflected on my own experience getting a scholarship based on my ACT score and I
+                realized that, though the math topics covered on the ACT had been gone over in school, what had really prepared me for the test's
+                pressure level and pace was all the speed chess I had played as a kid. It was chess that taught me to cope with time pressure, 
+                to focus my mind so that I could think clearly in a stressful circumstance. I offer discounted rates on SAT and ACT prep for 
+                students who add on chess lessons.
             </Typography>
         </React.Fragment>
     )
