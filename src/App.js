@@ -15,7 +15,7 @@ import TeachPage from "./pages/Teach/Teach";
 import MathGamesPage from "./pages/MathGames";
 import PuzzleCollectionPage from "./pages/PuzzleCollection"
 
-import GardenStoryPage from "./pages/GardenStory";
+import GardenStoryPage from "./pages/OurStory";
 import GardenGalleryPage from "./pages/GardenGallery";
 import AboutMePage from "./pages/AboutMe";
 import MyProjectsPage from "./pages/MyProjects";
