@@ -11,7 +11,7 @@ import {
 // MY COMPONENTS
 import LandingPage from "./pages/Landing";
 
-import TeachPage from "./pages/Teach/Teach";
+import TeachPage from "./pages/Teach";
 import MathGamesPage from "./pages/MathGames";
 import PuzzleCollectionPage from "./pages/PuzzleCollection"
 
@@ -87,9 +87,9 @@ export default function App() {
 
 
                         {/* GARDEN STUFF */}
-                        <Route path="/garden">
-                            <GardenPage />
-                        </Route> 
+                        <Route path="/garden" 
+                            component={GardenPage}
+                        /> 
 
                         <Route path="/photo_gallery">
                             <GardenGalleryPage />
