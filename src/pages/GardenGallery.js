@@ -74,12 +74,12 @@ import shell_ginger         from "../images/garden_gallery/flowers/shell_ginger.
 
 
 // wildlife images
-import gulf_fritilary from "../images/garden_gallery/wildlife/gulf_fritilary.JPG";
-import fritilary_caterpillars from "../images/garden_gallery/wildlife/fritilary_caterpillars.JPG";
-import frogs_on_shell_ginger from "../images/garden_gallery/wildlife/frogs_on_shell_ginger.JPG";
-import lizard from "../images/garden_gallery/wildlife/lizard.JPG";
-import frog_on_banana_stalk from "../images/garden_gallery/wildlife/frog_on_banana_stalk.JPG";
-import tiger_swallowtail from "../images/garden_gallery/wildlife/tiger_swallowtail_on_dill.JPG";
+import gulf_fritilary from "../images/wildlife/gulf_fritilary.JPG";
+import fritilary_caterpillars from "../images/wildlife/fritilary_caterpillars.JPG";
+import frogs_on_shell_ginger from "../images/wildlife/frogs_on_shell_ginger.JPG";
+import lizard from "../images/wildlife/lizard.JPG";
+import frog_on_banana_stalk from "../images/wildlife/frog_on_banana_stalk.JPG";
+import tiger_swallowtail from "../images/wildlife/tiger_swallowtail_on_dill.JPG";
 
 // early days images
 import mattresses from "../images/garden_gallery/early_days/mattresses.JPG";
@@ -572,7 +572,7 @@ function PageBody(props) {
                     Wildlife
                 </Typography>
                 <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
-                    The STEM Garden is home to countless frogs, toads, and lizards that help me by eating the bugs that would have eaten my plants. I have even seen speckled
+                    The STEM Garden is home to frogs, toads, and lizards that help me by eating the bugs that would have eaten my plants. I have even seen speckled
                     kingsnakes and herons. The presence of top predators like these is a great sign that there is good balance on the lower rungs of the food chain. When the
                     garden was first getting started there were a lot of rats but as this urban micro-ecosystem has matured there have been fewer rats and more squirrels and opossum.
                     I don't do anything to encourage this wildlife to be here beside create a safe habitat.
@@ -580,7 +580,7 @@ function PageBody(props) {
                 <PhotoGrid data={photoSetWildlife} />
                 
                 
-                <Typography className={classes.subtitleText} align='center' color='textPrimary' component='h2' variant='h2'>
+                {/* <Typography className={classes.subtitleText} align='center' color='textPrimary' component='h2' variant='h2'>
                     Early Days
                 </Typography>
                 <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
@@ -590,7 +590,7 @@ function PageBody(props) {
                     and composted 350 cubic yards of horse manure, grass clippings, and leaves. That's enough to cover the entire property in an 18-inch thick layer of organic matter 
                     before it all decomposed!
                 </Typography>
-                <PhotoGrid data={photoSetEarlyDays} />
+                <PhotoGrid data={photoSetEarlyDays} /> */}
                 
                 <Box py={8}  >
                     PAGE BOTTOM SPACER BOX
@@ -658,8 +658,8 @@ function SquarePhotoCard(props) {
                 </CardContent>
             </Collapse>
         </React.Fragment>);
-    
-    
+
+
     return (
         <Card className={classes.card}>
             <CardMedia
@@ -668,8 +668,8 @@ function SquarePhotoCard(props) {
                 title={props.tileData.title}
             />
 
-            {(props.tileData.hideTitle === true) ? '': [cardActions]}
-            
+            {(props.tileData.hideTitle === true) ? '' : [cardActions]}
+
         </Card>
     );
 }
