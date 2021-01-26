@@ -6,8 +6,6 @@ import { Link as RouterLink } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 
 // MATERIAL-UI COMPONENTS
-
-import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Icon from '@material-ui/core/Icon';
