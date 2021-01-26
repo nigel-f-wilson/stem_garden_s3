@@ -4,17 +4,26 @@ import PropTypes from 'prop-types';
 
 // MY components
 import Navbar from "../components/Navbar/Navbar";
+import SquarePhotoCard from "../components/SquarePhotoCard";
+import WildlifePhotoGrid from "../components/PhotoSets/WildlifePhotoGrid";
 
 // MY images
+// early days images
+import mattresses from "../images/garden_gallery/early_days/mattresses.JPG";
+import trash_in_dirt from "../images/garden_gallery/early_days/trash_in_dirt.JPG";
+
+
 
 // MUI Imports
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
 import AppBar from '@material-ui/core/AppBar';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
-
+import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
 
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
@@ -47,6 +56,10 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.common.white,
         padding: '0.0rem 1.0rem'
     },
+    squareImage: {
+        height: 0,
+        paddingTop: '100%', // square
+    }
 }));
 
 
@@ -64,55 +77,13 @@ export default function TeachPage(props) {
             >
                 <Box p='4.0rem'>
                     <Typography className={classes.titleText} align='center' color='textPrimary' component='h1' variant='h1'>
-                        Teaching Services
+                        About the Garden
                     </Typography>
                 </Box>
 
-                <ServiceTabs initialTab={initialTab} key={initialTab} />
+                <GardenTabs initialTab={initialTab} key={initialTab} />
 
-                <Box p={4}>
-                    <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-                        Testimony:
-                    </Typography>
-                    <Typography align='justify' color='textPrimary' component='h2' variant='body1' gutterBottom  >
-                        "I wouldn’t have made it through my first semester of grad school without Nigel. I had tried a few different tutors before
-                        Nigel but he is the perfect tutor. He takes a mathematical concept and makes it understandble and relevant.
-                        He listened to me complain about my professor, and then redirected to keep me positive and on track. He helped
-                        me to to master the steps and to understand the concepts well enough that I could explain things to the people
-                        in my study group. I wish he could always be my math teacher!
-                    </Typography>
-                    <Typography align='right' color='textPrimary' component='h2' variant='body1' gutterBottom  >
-                        J. Richelson
-                    </Typography>
-                    <Typography align='justify' color='textPrimary' component='h2' variant='body1' gutterBottom  >
-                        "I highly recommend Nigel without reservation for tutoring in mathematics because of his ability to convey the subject
-                        matter clearly while still presenting it in an interesting way with real world examples.  He taught my son 7th grade
-                        mathematics while employed at the Waldorf School in New Orleans and it was clear that he brought much preparation and care
-                        to his teaching while encouraging his students' solving ability and thirst for knowledge with an upbeat attitude."
-                    </Typography>
-                    <Typography align='right' color='textPrimary' component='h2' variant='body1' gutterBottom  >
-                        W. Mains
-                    </Typography>
-                    <Typography align='justify' color='textPrimary' component='h2' variant='body1' gutterBottom  >
-                        "I worked with Nigel and witnessed his enthusiasm for teaching math. He developed the math curriculum for and taught 4th-8th grade.
-                        Our students were very engaged in math while he was our math teacher. For the first time in a long time,
-                        they were excited to go to math because his lessons were so interesting and thought provoking.
-                        I hope Nigel can come back to our school as a chess teacher as soon as the restrictions on after
-                        school activities are lifted."
-                    </Typography>
-                    <Typography align='right' color='textPrimary' component='h2' variant='body1' gutterBottom  >
-                        J. Contento, Faculty Chair WSNO
-                    </Typography>
-                    <Typography align='justify' color='textPrimary' component='h2' variant='body1' gutterBottom  >
-                        "The best assistant I've ever had"
-                    </Typography>
-                    <Typography align='right' color='textPrimary' component='h2' variant='body1' gutterBottom  >
-                        G. Atkins, Owner of Atlas Electric LLC
-                    </Typography>
-                </Box>
-
-
-
+                
             </Container>
 
         </Box>
@@ -121,7 +92,7 @@ export default function TeachPage(props) {
 
 
 
-function ServiceTabs(props) {
+function GardenTabs(props) {
     const classes = useStyles();
     const [activeTab, setActiveTab] = React.useState(props.initialTab);
 
@@ -133,31 +104,21 @@ function ServiceTabs(props) {
         <Box className={classes.tabs}  >
             <AppBar className={classes.tabBar} position="static"  >
                 <Tabs value={activeTab} onChange={handleChange} aria-label="simple tabs example" centered>
-                    <Tab label="Tutoring" {...a11yProps(0)} />
-                    <Tab label="Enrichment" {...a11yProps(1)} />
-                    <Tab label="Chess" {...a11yProps(2)} />
-                    <Tab label="Test Prep" {...a11yProps(3)} />
-
+                    <Tab label="Our Story" {...a11yProps(0)} />
+                    <Tab label="What's Growing" {...a11yProps(1)} />
+                    <Tab label="Buy Our Produce" {...a11yProps(2)} />
                 </Tabs>
             </AppBar>
-            <TabPanel id='math_tutoring' className={classes.tabPanel} value={activeTab} index={0}>
-                <TutoringTabContent />
+            <TabPanel className={classes.tabPanel} value={activeTab} index={0}>
+                <OurStoryTabContent />
             </TabPanel>
 
-
-            <TabPanel id='math_enrichment' className={classes.tabPanel} value={activeTab} index={1} >
-                <EnrichmentTabContent />
+            <TabPanel className={classes.tabPanel} value={activeTab} index={1} >
+                <WhatsGrowingTabContent />
             </TabPanel>
 
-
-
-            <TabPanel id='chess' className={classes.tabPanel} value={activeTab} index={2}>
-                <ChessTabContent />
-            </TabPanel>
-
-
-            <TabPanel className={classes.tabPanel} value={activeTab} index={3}>
-                <TestPrepTabContent />
+            <TabPanel className={classes.tabPanel} value={activeTab} index={2}>
+                <BuyOurProduceTabContent />
             </TabPanel>
         </Box>
     );
@@ -197,72 +158,90 @@ function a11yProps(index) {
 }
 
 function getTabIndex(tabName) {
-    if (tabName === 'tutoring') { return 0 }
+    if (tabName === 'Our Story') { return 0 }
     if (tabName === 'enrichment') { return 1 }
     if (tabName === 'chess') { return 2 }
     if (tabName === 'test_prep') { return 3 }
     else { return 0 }
 }
 
-function TutoringTabContent() {
+function OurStoryTabContent() {
     return (
         <React.Fragment>
             <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-                Online and In-Person Availability
+                How I Got Into Gardening
             </Typography>
-            <Typography align='justify' color='textPrimargutterBottom y' component='p' variant='body1'>
-                I am currently accepting new students for online tutoring. <br />
-                I hope to begin offering in-person lessons in the garden beginning in February 2021, though this will depend on the pandemic.
-                I am not currently accepting new students for in-home tutoring.
+            <Typography align='justify' color='textPrimary' gutterBottom component='p' variant='body1'>
+                Before I ever tried my hand at gardening I was interested in foraging for edible wild plants. My
+                garden still shows clear signs of this influence. While certain crops are planted in neat rows 
+                and managed carefully, many other species are naturalized here and are allowed to thrive wherever their seeds 
+                happen to sprout. Because of this approach, a walk around the garden always has a surprize in store!
             </Typography>
-            <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-                Grade Levels and Courses Offered
-            </Typography>
-            <Typography align='justify' color='textPrimargutterBottom y' component='p' variant='body1'>
-                I offer one-on-one and small group math tutoring for students in 3rd through 12th grades and in college level
-                courses on algebra, calculus, statistics, discrete math, and probability.
-                For parents of younger students I offer guidance on how best to help children with their homework.
-                I am happy to serve as a math mentor to students who are homeschooled. Math Mentoring involves a combination
-                of enrichment and tutoring on topics required by grade level standards.
-                Be sure to check out the "Enrichment" tab to read about some of the hands-on explorations I have used to get
-                kids in touch with thhe fun side of math.
+            <Typography align='justify' color='textPrimary' gutterBottom component='p' variant='body1'>
+                I got serious about gardening when I was a sophomore at Ohio University. Working under Dr. Art Tesse, growing in the 
+                well-loved soil of the University Research Gardens, I learned one of the most important lessons about gardening, one that has stuck with
+                me ever since and become a pillar of the way I practice gardening in the STEM Garden: Gardening is less about
+                taking care of plants than most non-gardeners would suspect, it is about taking care of the soil and the whole mini-ecosystem.
+                If you take good care of the soil the rest of the garden takes care of itself.
             </Typography>
             <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-                Pricing
+                Early Days
             </Typography>
-            <Typography align='justify' color='textPrimargutterBottom y' component='p' variant='body1'>
-                For private tutoring with students in grade school and high school I charge $40 per hour.
-                For private tutoring with students in taking Calculus, AP, and College level classes I charge $55 per hour.
-                Prices for small group tutoring will be negotiated on a case by case basis.
-                Discounted rates on tutoring services are available for adding on chess lessons or math enrichment.
-                Students who commit to two or more hours of tutoring per week will also recieve support between lessons via text meassage.
+            <Typography align='justify' color='textPrimary' gutterBottom component='p' variant='body1'>
+                After my first three years gardening in various community gardens around Athens, Ohio I wanted to move to a warmer 
+                climate and buy land so that I could commit to gardening in one place for years to come, a necessary commitment if you want
+                to practice gardening in a way that focuses on caring for soil. 
+            </Typography>
+            <Box py={1} >
+                <Grid container spacing={2}  >
+                    <Grid item xs={12} md={6} >
+                        <SquarePhotoCard img={mattresses} />
+                    </Grid>
+                    <Grid item xs={12} md={6} >
+                        <SquarePhotoCard img={trash_in_dirt} />
+                    </Grid>
+                </Grid>
+            </Box>
+            
+            <Typography align='justify' color='textPrimary' gutterBottom component='p' variant='body1'>
+                In March of 2016, I won a Civic Source auction for a blighted vacant lot at the corner of Port St. and N. Galvez, in New Orleans upper ninth ward.
+                Though I started experimenting right away with what plants would do well in my new garden, for the first three years most of the work was 
+                picking trash out of the soil, eliminating invasive species like ragweed, and bringing in 400 cubic yards of horse manure and other organic matter to compost.  
+            </Typography>
+
+
+            <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
+                Wildlife Habitat
+            </Typography>
+            <Typography align='justify' color='textPrimary' gutterBottom component='p' variant='body1'>
+                Countless frogs, toads, lizards, and birds make there home in the STEM Garden and help me by eating the bugs that would have like to eat my plants.
+                The garden also supports butterflies and bees from nearby hives, offering them nectar in exchange for their work as polinators. 
+                I get immeasureble joy from watching all the living creatures that have found their way into this little urban oasis.
+                The ability to support diverse animal life is a sign that the ecosystem as a whole is healthy.  
+            </Typography>
+            <WildlifePhotoGrid />
+
+
+            <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
+                Building the Classroom
+            </Typography>
+            <Typography align='justify' color='textPrimary' gutterBottom component='p' variant='body1'>
+                
+                
             </Typography>
             <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-                My Math Teaching Experience
+                Gardening Philosophy
             </Typography>
-            <Typography align='justify' color='textPrimargutterBottom y' component='p' variant='body1'>
-                I earned my degree in math education from Ohio University in 2015. While working toward my degree I completed several internships in
-                rural and inner city public schools in Ohio. For my final semester-long teaching internship I lived in New Delhi, India and taught at
-                Step-By-Step School.  In 2016, I moved from Ohio to New Orleans to launch my teaching career at Einstein Middle School.
-                Within a few months of moving I purchassed a blighted vacant lot and began the long process of cleaning it up and
-                transforming it into the STEM Garden. Throughout the next two years I spent my mornings developing the garden and taught math and physics
-                at College Track, an afterschool program for aspiring first generation college students.
-                After College Track, I took a break from classroom-based teaching. Students are full of questions about the "real-world" uses for the math
-                they are taught in school so it serves a math teacher well to have some personal experience using math in the "real-world".
-                I worked as farm manager for Recirculating Farms Coaltion and got to learn a lot about aquaponics and the math required to run
-                the business side of a small farm. I also worked as an electrician's assistant with Ziemba Electric and Atlas Electric.
-                I already had some text-book understanding of electrical circuits, but through this experience I learned how to go from theory
-                all the way through to craftsmanlike installations.
-                During the 2019-2020 school year I was back in the classroom, working as the math specialist at the Waldorf School of New Orleans.
-                I designed curriculum and taught math to students in grades 4-8. I taught through the transition to remote learning, but at the end
-                of the year the school had to downsize. Throughout the previous four years I had taken occasional gigs as a free lance in-home math tutor but
-                the pandemic pushed me to take that business online and it has been growing steadily since.
+            <Typography align='justify' color='textPrimary' gutterBottom component='p' variant='body1'>
+                The garden produces lots to eat, but productivity is never the top priority. My focus is always on improving soil health, 
+                creating wildlife habitat, and increasing bio-diversity. The garden 
             </Typography>
+            
         </React.Fragment>
     )
 }
 
-function EnrichmentTabContent() {
+function WhatsGrowingTabContent() {
     return (
         <React.Fragment>
             <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
@@ -300,7 +279,7 @@ function EnrichmentTabContent() {
     )
 }
 
-function ChessTabContent() {
+function BuyOurProduceTabContent () {
     return (
         <React.Fragment>
             <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
@@ -392,47 +371,18 @@ function ChessTabContent() {
     )
 }
 
-function TestPrepTabContent() {
-    return (
-        <React.Fragment >
-            <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-                Tests Covered
-            </Typography>
-            <Typography align='justify' color='textPrimary' gutterBottom component='p' variant='body1'>
-                I offer one-on-one coaching (online or in person) for students seeking to improve their scores on the math sections
-                of the SAT&reg;, ACT&reg; and GRE&reg;. I also help students prepare for the AP&reg; Calculus and Physics exams.
-            </Typography>
+// function SquarePhoto(props) {
+//     const classes = useStyles();
 
-            <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-                Approach
-            </Typography>
-            <Typography align='justify' color='textPrimary' gutterBottom component='p' variant='body1'>
-                Preparing for high-stakes standardized tests takes more than just learning the math concepts covered on them.
-                You must also be prepared to apply those concepts to solve unfamiliar types of problems. This requires
-                creative thinking, something that most people struggle with when under time pressure.
-                I take a wholistic approach to preparing students for these exams. I don't just review the math concepts, I help
-                students overcome test taking anxiety, learn to mannage their time effectively, and to recognize shortcuts when they
-                are possible.
-            </Typography>
-            <Typography align='justify' color='textPrimary' gutterBottom component='p' variant='body1'>
-                High-stakes standardized tests are an unfortunate and unavoidable part of the modern education landscape.
-                They are neither a fair nor a complete means of assessing students' academic abilities.
-                They are obsolete and reward qualities that are no longer as valuable to society as Sugata Mitra explains in his
-                2012 TED Talk&reg; <a href="https://www.ted.com/talks/sugata_mitra_build_a_school_in_the_cloud?language=en">"Build a School in the Cloud"</a>
-                Nonetheless, they are here to stay, and doing well on them can unlock doors. The ACT score I got when I
-                was a junior in highschool was the key to me earning a full-tuition scholarship to Ohio University, and
-                ultimately graduating without crushing student loan debt.  I joke that taking the ACT took me about four hours and earned
-                me a $40,000 scholarship, making it by far the best hourly rate I have ever earned in my working life.
-            </Typography>
-justify         <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-                Pricing
-            </Typography>
-            <Typography align='justify' color='textPrimary' gutterBottom component='p' variant='body1'>
-                Test Prep services are priced on a sliding scale, please pay according to your means.
-                One-on-one test prep is offered for $45-70 per hour.
-                As with math tutoring services, I want test prep to be accessible to any motivated student.
-                If money is what's holding you back, I am happy to barter or make work-trade agreements.
-            </Typography>
-        </React.Fragment>
-    )
-}
+//     return (
+//         // <Box p={2} >
+//             <Card className={classes.card}>
+//                 <CardMedia
+//                     className={classes.squareImage}
+//                     image={props.img}
+//                 // title={props.title}
+//                 />
+//             </Card>
+//         // </Box>
+//     );
+// }
