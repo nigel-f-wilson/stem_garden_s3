@@ -11,7 +11,7 @@ import {
 // MY COMPONENTS
 import LandingPage from "./pages/Landing";
 
-import TeachPage from "./pages/Teach";
+import TeachPage from "./pages/Teach/Teach";
 import MathGamesPage from "./pages/MathGames";
 import PuzzleCollectionPage from "./pages/PuzzleCollection"
 

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 
 // MY components
-import Navbar from "../components/Navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 
 // MY images
 
@@ -44,21 +44,6 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.common.white,
         padding: '2.0rem 4.0rem',
     },
-    header: {
-        color: theme.palette.common.white,
-        padding: '0.0rem 0.0rem',
-    },
-    // body: {
-    //     color: theme.palette.common.white,
-    //     padding: '0.0rem 0.0rem',
-    //     paddingBottom: '1.5rem',
-    //     // maxWidth: '640px'
-    // },
-    // summary: {
-    //     color: theme.palette.common.white,
-    //     paddingBottom: '0.7rem',
-    //     // maxWidth: '640px'
-    // },
     tabs: {
         display: 'flex',
         flexDirection: 'column',
@@ -76,7 +61,6 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
         flex: '1 1 100%',
-        // color: theme.palette.common.white,
     },
     tabPanel: {
         backgroundColor: theme.palette.common.black,
@@ -98,17 +82,13 @@ export default function TeachPage(props) {
                 maxWidth='md'
                 disableGutters
             >
-                {/* <Typography align='center' color='white' component='h1' variant='h6'>
-                    Tab: {props.location.state.selectedTab}  <br />
-                    Tab Number: {initialTab}
-                </Typography> */}
                 <Typography className={classes.titleText} align='center' color='textPrimary' component='h1' variant='h1'>
                     Teaching Services
                 </Typography>
                 <ServiceTabs initialTab={initialTab} key={initialTab} />
 
                 <Box p={4}>
-                    <Typography className={classes.subtitleText} align='center' color='textPrimary' component='h2' variant='h2'>
+                    {/* <Typography className={classes.subtitleText} align='center' color='textPrimary' component='h2' variant='h2'>
                         Teaching Philosophy
                     </Typography>
                     <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
@@ -121,37 +101,10 @@ export default function TeachPage(props) {
                         can find it together." A teacher is dedicated to being a life-long learner and realizes that all
                         learning starts with realizing that there is something you have yet to learn.
                         <a> Click Here </a> for a list of some of my favorite books and TED Talks on philosophy of education.
-                    </Typography>
-                    <Typography className={classes.header} align='center' color='textPrimary' component='h2' variant='h2'>
-                        Pricing
-                    </Typography>
-                    <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
-                        A goal of the STEM Garden is to make engaging math and science education accessible to all.  
-                        Because of this we accept payment on a sliding scale, within the following price ranges. 
-                        You are invited to look within and decide what you are capable of paying, depending on your ability to support your community.
-                        <br /> &bull; Chess lessons and STEM Enrichment: $30-50 per hour. 
-                        <br /> &bull; Tutoring, elementary thru algebra: $30-50 per hour. 
-                        <br /> &bull; Tutoring, College level, AP, & Calculus: $45-65 per hour.
-                        <br /> &bull; Test Prep, SAT, ACT, GRE: $45-65 per hour.
-                    </Typography>
+                    </Typography> */}
                     
-
-
-
-                    <Typography className={classes.header} align='center' color='textPrimary' component='h2' variant='h2'>
-                        Professional Experience
-                    </Typography>
-                    <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
-                        I completed my degree in middle school and high school math education at Ohio University in 2015 after  , ex
-                    </Typography>    
-                    <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
-                        My formal teacher training is in Middle and High School Mathematics. 
-                        Before that I studied physics, and this has always had a big influence on my approach to teaching math. 
-                        I have been inventing stategy games and tinkering and taking things apart all my life.
-                        all my life and
-                    </Typography>    
                     
-                    <Typography className={classes.header} align='center' color='textPrimary' component='h2' variant='h2'>
+                    <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
                         Testimony:
                     </Typography>
                     <Typography className={classes.body} align='justify' color='textPrimary' component='h2' variant='body1' >
@@ -163,16 +116,15 @@ export default function TeachPage(props) {
 
                         "I highly recommend Nigel without reservation for tutoring in mathematics because of his ability to convey the subject 
                         matter clearly while still presenting it in an interesting way with real world examples.  He taught my son 7th grade 
-                        mathematics while employed at Waldorf School in New Orleans and it was clear that he brought much preparation and care 
+                        mathematics while employed at the Waldorf School in New Orleans and it was clear that he brought much preparation and care 
                         to his teaching while encouraging his students' solving ability and thirst for knowledge with an upbeat attitude." -W. Mains
                         
                         "I worked with Nigel and witnessed his enthusiasm for teaching math. He developed the math curriculum for and taught 4th-8th grade. 
                         Our students were very engaged in math while he was our math teacher. For the first time in a long time, 
                         they were excited to go to math because his lessons were so interesting and thought provoking. 
                         I hope Nigel can come back to our school as a chess teacher as soon as the restrictions on after 
-                        school activities are lifted. J. CONTENTO, Faculty Chair WSNO
+                        school activities are lifted. J. Contento, Faculty Chair WSNO
                     </Typography>
-                
                 </Box>
                 
 
@@ -204,15 +156,54 @@ function ServiceTabs(props) {
 
                 </Tabs>
             </AppBar>
-            <TabPanel className={classes.tabPanel} value={activeTab} index={0}>    
-                I offer one-on-one help with any mathematics related to a class in school, at any level. <br />
-                I have experience teaching math in classroom settings to students in 3rd grade through high school,
-                and have tutored students through undergrad and graduate level courses in physics, statistics, and calculus.
-                I am well versed in the Common Core Math Standards and have completed training in Waldorf teaching methodology.
-                I strive to identify and fill knowledge gaps trough direct instruction when necessary,
-                but my real aim is always to help my students become more independent learners. <br />
+            <TabPanel id='math_tutoring' className={classes.tabPanel} value={activeTab} index={0}>    
+                <TutoringTabContent />
             </TabPanel>
-            <TabPanel className={classes.tabPanel} value={activeTab} index={1}>
+
+
+            <TabPanel id='math_enrichment' className={classes.tabPanel} value={activeTab} index={1} >
+                <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
+                    Availability
+                </Typography>
+                <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
+                    Due to the extremely hand-on nature of my math enrichment lessons they are not offered in an online format.
+                    I hope to begin offering in-person math enrichment lessons in the garden beginning in February 2021, though this will be depend on the pandemic.
+                </Typography>
+                <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
+                    Topics Offered
+                </Typography>
+                <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
+                    Math enrichment topics range from totally abstract mathematical games to the most real-world and hands-on 
+                </Typography>
+                <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
+                    Pricing
+                </Typography>
+                <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
+                    My hourly rate for one-on-one tutoring starts at $40 for students in grade school through most of high school.
+                    One-on-one tutoring for students in Calculus, AP, and College level classes is $50 per hour.
+                    Prices for small groups tutoring will be negotiated on a case by case basis.
+                    Discounted rates on tutoring services are available for adding on chess lessons or math enrichment.
+                    Students who commit to two or more hours of tutoring per week will also recieve support between lessons via text meassage.
+                </Typography>
+                <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
+                    My Math Teaching Experience
+                </Typography>
+                <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
+                    I earned my degree in math education from Ohio University in 2015, a process that culminated in a semester-long teaching internship
+                    which I completed in New Delhi, India.  In January 2016, I moved from Ohio to New Orleans to launch my teaching career at Einstein Middle School.
+                    Within a few months I'd purchassed a vacant lot at the corner of Port and Galvez and started to clean it up and transform it into the STEM Garden.
+                    The following two years I spent my mornings working on the garden and my afternoons tutoring aspiring first generation college students
+                    in math and physics at College Track. A major part of my work at College Track was helping students prepare for the ACT and SAT Math tests.
+                    After College Track, I took a sebatical from classroom-based teaching to seek out more "real-world" uses for the math I had been teaching.
+                    I got to learn a lot about aquaponics and was able to pass that information on to curious groups of volunteers while working as farm manager
+                    for Recirculating Farms. I worked as an electrician's assistant with Ziemba Electric and Atlas Electric. In each of these roles I found
+                    many excellent new answers to the question "when am I going to use this?"
+                    During the 2019-2020 school year I was the math specialist at the Waldorf School of New Orleans. I designed the curriculum and taught math
+                    to students in grades 4-8. I taught through the transition to remote learning, but at the end of the year the school had to downsize.
+                    Throughout the previous four years I had taken occasional gigs as a free lance in-home math tutor. Around the the start of the pandemic
+                    I took that business online and it started to grow.
+                </Typography>
+                
                 Come experience the fun side of math and science! 
                 Learn about solar power, game theory, gardening, the physics of music, and catapults, 
                 computer programming... you name it!  <br />
@@ -228,10 +219,10 @@ function ServiceTabs(props) {
             
             
             <TabPanel className={classes.tabPanel} value={activeTab} index={2}>
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='h3' variant='h4'>
+                <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
                     Lessons
                 </Typography>
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='p' variant='body1'>
+                <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
                     I offer one-on-one coaching and small group chess lessons for all ages! <br />
                     Group lessons are a great option for kids who are friends, neighbors, or in homeschool pod together.
                     I also offer mentoring for parents who aren't experienced players themselves but
@@ -240,10 +231,10 @@ function ServiceTabs(props) {
                     or in the 90th percentile of players on chess.com.
                 </Typography>
 
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='h3' variant='h4'>
+                <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
                     Afterschool Clubs
                 </Typography>
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='p' variant='body1'>
+                <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
                     *** All in-person clubs are temporarily cancelled due to Covid-19 *** <br />
                     I currently host an afterschool chess club in partnership with the Waldorf School of New Orleans.
                     I will be launching a Sunday afternoon chess club in the STEM Garden as soon as it is safe to do so.
@@ -251,10 +242,10 @@ function ServiceTabs(props) {
                     Need help establishing a chess club at your school? Call me! 
                 </Typography>
 
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='h3' variant='h4'>
+                <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
                     Why Learn Chess?
                 </Typography>
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='p' variant='body1'>
+                <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
                     Learning chess helps kids experience firsthand that thinking hard and having fun can go together. <br />
                     Math and Chess have a lot in common. They both require us to plan ahead, to think creatively, 
                     yet to be disiplined and thorough at the same time. <br /><br />
@@ -281,10 +272,10 @@ function ServiceTabs(props) {
                     be valuable habits to possess in whatever you do. 
                 </Typography>
 
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='h3' variant='h4'>
+                <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
                     Pricing
                 </Typography>
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='p' variant='body1'>
+                <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
                     Lessons for 1 to 3 students are offered on a sliding scale of $30-60 per hour. <br />
                     Lessons for 4 to 8 students are offered on a sliding scale of $40-80 per hour. <br />
                     Sunday Chess Club in the garden is offered with a suggested donation of $5-10. <br />
@@ -296,18 +287,18 @@ function ServiceTabs(props) {
 
 
             <TabPanel className={classes.tabPanel} value={activeTab} index={3}>
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='h3' variant='h4'>
+                <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
                     Tests Covered
                 </Typography>
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='p' variant='body1'>
+                <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
                     I offer one-on-one coaching for students seeking to improve their scores on the math sections of the SAT&reg; and ACT&reg;.
                     I also help students prepare for the AP&reg; Calculus and Physics exams.
                 </Typography>
 
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='h3' variant='h4'>
+                <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
                     Approach
                 </Typography>
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='p' variant='body1'>
+                <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
                     High-stakes standardized tests are an unfortunate and unavoidable part of the modern education landscape.                
                     They are neither a fair nor a complete means of assessing students' academic abilities.
                     They reward qualities that are no longer valuable as Sugata Mitra explains early in his 
@@ -316,7 +307,7 @@ function ServiceTabs(props) {
                     was a junior in highschool was the key to me earning a four-year full tuition scholarship to Ohio University. 
                     I joke that, at about $10,000 dollars per hour, taking the ACT that morning was the best hourly rate I have ever earned in my working life.
                 </Typography>
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='p' variant='body1'>
+                <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
                     Test-taking anxiety renders many intelligent, hardworking, and creative students unable to
                     do their best on college entrance exams. 
                     Anxiety is worsened by the fact that these tests tend to be very fast paced.
@@ -325,14 +316,15 @@ function ServiceTabs(props) {
                     teach test taking mindsets
 
                     These tests tend to be fast-paced
+                    A major part of my work at College Track was helping students prepare for the ACT and SAT Math tests. 
 
                 </Typography>
 
 
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='h3' variant='h4'>
+                <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
                     Why Learn Chess?
                 </Typography>
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='p' variant='body1'>
+                <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
                     Learning chess helps kids experience firsthand that thinking hard and having fun can go together. <br />
                     Math and Chess have a lot in common. They both require us to plan ahead, to think creatively,
                     yet to be disiplined and thorough at the same time. <br /><br />
@@ -359,10 +351,10 @@ function ServiceTabs(props) {
                     be valuable habits to possess in whatever you do.
                 </Typography>
 
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='h3' variant='h4'>
+                <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
                     Pricing
                 </Typography>
-                <Typography className={classes.header} gutterBottom align='left' color='textPrimary' component='p' variant='body1'>
+                <Typography align='left' color='textPrimary' gutterBottom component='p' variant='body1'>
                     Lessons for 1 to 3 students are offered on a sliding scale of $30-60 per hour. <br />
                     Lessons for 4 to 8 students are offered on a sliding scale of $40-80 per hour. <br />
                     Sunday Chess Club in the garden is offered with a suggested donation of $5-10. <br />
@@ -417,3 +409,62 @@ function getTabIndex(tabName) {
     else { return 0 }
 }
 
+function TutoringTabContent() {
+    const classes = useStyles();
+
+    return (
+        <React.Fragment> 
+            <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
+                Online and In-Person Availability
+            </Typography>
+            <Typography align='justify' color='textPrimargutterBottom y' component='p' variant='body1'>
+                I am currently accepting new students for online tutoring. <br />
+                I hope to begin offering in-person lessons in the garden beginning in February 2021, though this will depend on the pandemic.
+                I am not currently accepting new students for in-home tutoring.
+            </Typography>
+            <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
+                Grade Levels and Courses Offered
+            </Typography>
+            <Typography align='justify' color='textPrimargutterBottom y' component='p' variant='body1'>
+                I offer one-on-one and small group math tutoring for students in 3rd through 12th grades and in college level
+                courses on algebra, calculus, statistics, discrete math, and probability.
+                For parents of younger students I offer guidance on how best to help children with their homework.
+                I am happy to serve as a math mentor to students who are homeschooled. Math Mentoring involves a combination
+                of enrichment and tutoring on topics required by grade level standards.
+                Be sure to check out the "Enrichment" tab to read about some of the hands-on explorations I have used to get
+                kids in touch with thhe fun side of math.
+            </Typography>
+            <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
+                Pricing
+            </Typography>
+            <Typography align='justify' color='textPrimargutterBottom y' component='p' variant='body1'>
+                For private tutoring with students in grade school and high school I charge $40 per hour.
+                For private tutoring with students in taking Calculus, AP, and College level classes I charge $55 per hour.
+                Prices for small group tutoring will be negotiated on a case by case basis.
+                Discounted rates on tutoring services are available for adding on chess lessons or math enrichment.
+                Students who commit to two or more hours of tutoring per week will also recieve support between lessons via text meassage.
+            </Typography>
+            <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
+                My Math Teaching Experience
+            </Typography>
+            <Typography align='justify' color='textPrimargutterBottom y' component='p' variant='body1'>
+                I earned my degree in math education from Ohio University in 2015. While working toward my degree I completed several internships in
+                rural and inner city public schools in Ohio. For my final semester-long teaching internship I lived in New Delhi, India and taught at
+                Step-By-Step School.  In 2016, I moved from Ohio to New Orleans to launch my teaching career at Einstein Middle School.
+                Within a few months of moving I purchassed a blighted vacant lot and began the long process of cleaning it up and
+                transforming it into the STEM Garden. Throughout the next two years I spent my mornings developing the garden and taught math and physics
+                at College Track, an afterschool program for aspiring first generation college students.
+                After College Track, I took a break from classroom-based teaching. Students are full of questions about the "real-world" uses for the math
+                they are taught in school so it serves a math teacher well to have some personal experience using math in the "real-world".
+                I worked as farm manager for Recirculating Farms Coaltion and got to learn a lot about aquaponics and the math required to run
+                the business side of a small farm. I also worked as an electrician's assistant with Ziemba Electric and Atlas Electric.
+                I already had some text-book understanding of electrical circuits, but through this experience I learned how to go from theory
+                all the way through to craftsmanlike installations.
+                During the 2019-2020 school year I was back in the classroom, working as the math specialist at the Waldorf School of New Orleans.
+                I designed curriculum and taught math to students in grades 4-8. I taught through the transition to remote learning, but at the end
+                of the year the school had to downsize. Throughout the previous four years I had taken occasional gigs as a free lance in-home math tutor but
+                the pandemic pushed me to take that business online and it has been growing steadily since.
+            </Typography>
+        </React.Fragment>
+    )
+}
