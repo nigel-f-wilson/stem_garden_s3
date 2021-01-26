@@ -25,67 +25,67 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 // MY images
 
 // header images
-import banana_papaya_top    from "../images/garden_gallery/header/banana_papaya_top.JPG"
+import banana_papaya_top    from "../images/banana_papaya_harvest.JPG"
 
 // banana images
-import holding_banana_bunches   from "../images/garden_gallery/banana/holding_banana_bunches.JPG"
-import dwarf_cavendish_harvest  from "../images/garden_gallery/banana/dwarf_cavendish_harvest.JPG";
-import banana_flower            from "../images/garden_gallery/banana/banana_flower.JPG";
-import banana_types             from "../images/garden_gallery/banana/banana_types.png"
-import banana_leaf              from "../images/garden_gallery/banana/banana_leaf.jpg"
+import holding_banana_bunches   from "../images/banana/holding_banana_bunches.JPG"
+import dwarf_cavendish_harvest  from "../images/banana/dwarf_cavendish_harvest.JPG";
+import banana_flower            from "../images/banana/banana_flower.JPG";
+import banana_types             from "../images/banana/banana_types.png"
+import banana_leaf from "../images/banana/banana_flower.JPG"
 
 // papaya images
-import papaya_flower        from "../images/garden_gallery/papaya/papaya_flower.JPG";
-import papaya_trees         from "../images/garden_gallery/papaya/papaya_trees.JPG";
-import papaya_leaf          from "../images/garden_gallery/papaya/papaya_leaf.jpg";
-import papaya_halved        from "../images/garden_gallery/papaya/papaya_halved.JPG";
-import papaya_picking       from "../images/garden_gallery/papaya/papaya_picking.JPG";
-import papaya_pile          from "../images/garden_gallery/papaya/papaya_pile.JPG";
-import papaya_fruit         from "../images/garden_gallery/papaya/papaya_fruit.JPG";
+import papaya_flower        from "../images/papaya/papaya_flower.JPG";
+import papaya_trees         from "../images/papaya/papaya_trees.JPG";
+import papaya_leaf          from "../images/papaya/papaya_leaf.jpg";
+import papaya_halved        from "../images/papaya/papaya_halved.JPG";
+import papaya_picking       from "../images/papaya/papaya_picking.JPG";
+import papaya_pile          from "../images/papaya/papaya_pile.JPG";
+import papaya_fruit         from "../images/papaya/papaya_fruit.JPG";
 
 // turmeric images
-import turmeric_flower  from "../images/garden_gallery/turmeric/turmeric_flower.JPG";
-import turmeric_root    from "../images/garden_gallery/turmeric/turmeric_root.JPG";
-import turmeric_leaves  from "../images/garden_gallery/turmeric/turmeric_leaves.JPG";
+import turmeric_flower  from "../images/turmeric/turmeric_flower.JPG";
+import turmeric_root    from "../images/turmeric/turmeric_root.JPG";
+import turmeric_leaves  from "../images/turmeric/turmeric_leaves.JPG";
 
 // other crops images
-import tomato_cuke_harvest  from "../images/garden_gallery/other_crops/tomato_cuke_harvest.JPG";
-import fig_harvest          from "../images/garden_gallery/other_crops/fig_harvest.JPG";
-import lime_harvest         from "../images/garden_gallery/other_crops/lime_harvest.JPG";
-import loquat_harvest       from "../images/garden_gallery/other_crops/loquat_harvest.JPG";
-import guavas               from "../images/garden_gallery/other_crops/guavas.JPG";
-import radishes             from "../images/garden_gallery/other_crops/radishes.JPG";
+import tomato_cuke_harvest  from "../images/other_crops/tomato_cuke_harvest.JPG";
+import fig_harvest          from "../images/other_crops/fig_harvest.JPG";
+import lime_harvest         from "../images/other_crops/lime_harvest.JPG";
+import loquat_harvest       from "../images/other_crops/loquat_harvest.JPG";
+import guavas               from "../images/other_crops/guavas.JPG";
+import radishes             from "../images/other_crops/radishes.JPG";
 
 
 // flowers images
-import passionflower        from "../images/garden_gallery/flowers/passion_flower.jpg";
-import sunflower from "../images/garden_gallery/flowers/sunflower.JPG";
-import hibiscus_flower      from "../images/garden_gallery/flowers/hibiscus_flower.JPG";
-import loquat_blossom       from "../images/garden_gallery/flowers/loquat_blossom.JPG";
-import pineapple_guava      from "../images/garden_gallery/flowers/pineapple_guava_flowers.JPG";
-import pomegranite_flower   from "../images/garden_gallery/flowers/pomegranite_flower.JPG";
-import tobacco_flower       from "../images/garden_gallery/flowers/tobacco_flower.JPG";
-import yarrow_flower        from "../images/garden_gallery/flowers/yarrow_flower.JPG";
-import zinnia_teapot        from "../images/garden_gallery/flowers/zinnia_teapot.JPG";
-import jasmine_flower       from "../images/garden_gallery/flowers/jasmine_flower.JPG";
-import redbud_flower        from "../images/garden_gallery/flowers/redbud_flower.JPG";
-import shell_ginger         from "../images/garden_gallery/flowers/shell_ginger.JPG";
+import passionflower        from "../images/flowers/passion_flower.jpg";
+import sunflower            from "../images/flowers/sunflower.JPG";
+import hibiscus_flower      from "../images/flowers/hibiscus_flower.JPG";
+import loquat_blossom       from "../images/flowers/loquat_blossom.JPG";
+import pineapple_guava      from "../images/flowers/pineapple_guava_flowers.JPG";
+import pomegranite_flower   from "../images/flowers/pomegranite_flower.JPG";
+import tobacco_flower       from "../images/flowers/tobacco_flower.JPG";
+import yarrow_flower        from "../images/flowers/yarrow_flower.JPG";
+import zinnia_teapot        from "../images/flowers/zinnia_teapot.JPG";
+import jasmine_flower       from "../images/flowers/jasmine_flower.JPG";
+import redbud_flower        from "../images/flowers/redbud_flower.JPG";
+import shell_ginger         from "../images/flowers/shell_ginger.JPG";
 
 
 
 // wildlife images
-import gulf_fritilary from "../images/wildlife/gulf_fritilary.JPG";
-import fritilary_caterpillars from "../images/wildlife/fritilary_caterpillars.JPG";
-import frogs_on_shell_ginger from "../images/wildlife/frogs_on_shell_ginger.JPG";
-import lizard from "../images/wildlife/lizard.JPG";
-import frog_on_banana_stalk from "../images/wildlife/frog_on_banana_stalk.JPG";
-import tiger_swallowtail from "../images/wildlife/tiger_swallowtail_on_dill.JPG";
+import gulf_fritilary           from "../images/wildlife/gulf_fritilary.JPG";
+import fritilary_caterpillars   from "../images/wildlife/fritilary_caterpillars.JPG";
+import frogs_on_shell_ginger    from "../images/wildlife/frogs_on_shell_ginger.JPG";
+import lizard                   from "../images/wildlife/lizard.JPG";
+import frog_on_banana_stalk     from "../images/wildlife/frog_on_banana_stalk.JPG";
+import tiger_swallowtail        from "../images/wildlife/tiger_swallowtail_on_dill.JPG";
 
 // early days images
-import mattresses from "../images/garden_gallery/early_days/mattresses.JPG";
-import trash_in_dirt from "../images/garden_gallery/early_days/trash_in_dirt.JPG";
-import street_view_before from "../images/garden_gallery/early_days/street_view_before.png";
-import trashed_lot from "../images/garden_gallery/early_days/trashed_lot.JPG";
+import mattresses           from "../images/early_days/mattresses.JPG";
+import trash_in_dirt        from "../images/early_days/trash_in_dirt.JPG";
+import street_view_before   from "../images/early_days/street_view_before.png";
+import trashed_lot          from "../images/early_days/trashed_lot.JPG";
 
 
 import { makeStyles } from '@material-ui/core/styles';
