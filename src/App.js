@@ -17,7 +17,6 @@ import PuzzleCollectionPage from "./pages/PuzzleCollection"
 
 import GardenPage from "./pages/Garden.js";
 import GardenStoryPage from "./pages/OurStory";
-import GardenGalleryPage from "./pages/GardenGallery";
 import AboutMePage from "./pages/AboutMe";
 import MyProjectsPage from "./pages/MyProjects";
 // import ContactPage from "./pages/Contact";
@@ -90,10 +89,6 @@ export default function App() {
                         <Route path="/garden" 
                             component={GardenPage}
                         /> 
-
-                        <Route path="/photo_gallery">
-                            <GardenGalleryPage />
-                        </Route> 
 
                         <Route path="/our_story">
                             <GardenStoryPage />
