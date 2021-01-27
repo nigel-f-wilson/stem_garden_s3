@@ -6,40 +6,46 @@ import SquarePhotoCard from "../SquarePhotoCard";
 // MUI CORE Imports
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+
 
 // MY images
-// turmeric images
-import turmeric_flower from "../../images/turmeric/turmeric_flower.JPG";
-import turmeric_replanting from "../../images/turmeric/turmeric_replanting.JPG";
-import turmeric_leaves from "../../images/turmeric/turmeric_leaves.JPG";
-import turmeric_harvest from "../../images/turmeric/turmeric_harvest.JPG";
-
+import fig_harvest from "../../images/fig/fig_harvest.JPG";
+import fig_tree from "../../images/fig/fig_tree.JPG";
 
 const photoSet = [
     {
-        img: turmeric_harvest,
-        title: 'Turmeric rhizomes',
-        description: 'Two freshly harvested bunches',
-        gridCols: 12,
-        hideTitle: true,
-    }, {
-        img: turmeric_flower,
-        title: 'Turmeric Flower',
+        img: fig_harvest,
+        title: 'Ripe figs',
         description: '',
         gridCols: 6,
         hideTitle: true,
     }, {
-        img: turmeric_replanting,
-        title: 'Turmeric freshly planted',
+        img: fig_tree,
+        title: 'fig tree',
         description: '',
         gridCols: 6,
         hideTitle: true,
-    },
+    }, 
 ];
 
-// The GardenGallery renders a navbar and a layout of pictures and explanatory paragraphs.
-// M vs. D layout of pictures is handled using MUI Grid.
-export default function TurmericPhotoGrid(props) {
+
+
+export default function FigInfo(props) {
+    return (
+        <React.Fragment>
+            <Typography align='center' color='textPrimary' component='h2' variant='h2'>
+                Figs
+            </Typography>
+            <Typography align='justify' color='textPrimary' component='h2' variant='body1' >
+                We sell fruit and rooted cuttings in case you want to grow your own.
+            </Typography>
+            <FigPhotoGrid />
+        </React.Fragment>
+    )
+}
+
+function FigPhotoGrid(props) {
     return (
         <Box my={2}  >
             <Grid container
@@ -63,14 +69,13 @@ function PhotoGrid(props) {
 
     return (
         <Grid container
-            id='grid'
-            spacing={2}
+            spacing={1}
         >
-            {props.data.map((tile) => (
+            {photoSet.map((tile) => (
                 <Grid item xs={12} sm={tile.gridCols}
                     key={tile.img}
                 >
-                    <SquarePhotoCard tileData={tile} />
+                    <SquarePhotoCard img={tile.img} />
 
                 </Grid>
             ))}

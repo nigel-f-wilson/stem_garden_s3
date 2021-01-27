@@ -6,6 +6,8 @@ import SquarePhotoCard from "../SquarePhotoCard";
 // MUI CORE Imports
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+
 
 // MY images
 // turmeric images
@@ -37,9 +39,27 @@ const photoSet = [
     },
 ];
 
-// The GardenGallery renders a navbar and a layout of pictures and explanatory paragraphs.
-// M vs. D layout of pictures is handled using MUI Grid.
-export default function LoquatPhotoGrid(props) {
+
+export default function TurmericInfo(props) {
+    return (
+        <React.Fragment>
+            <Typography align='center' color='textPrimary' component='h2' variant='h2'>
+                Turmeric
+            </Typography>
+            <Typography align='justify' color='textPrimary' component='h2' variant='body1' >
+                I started growing a lot of turmeric when I decided that I wanted the STEM Garden to require less maintenance while still producing valuable crops.
+                Turmeric is very happy in New Orleans' climate, especially in our light, well-drained soil. Its broad leaves help shade out
+                weeds and other competition. Unlike the fruits we grow, which need picked daily when they are in season, turmeric only
+                requires hands on work a few days out of the year. It keeps very well if it is dug up in the dry season, so each October
+                I dig up all the turmeric, break the big root clusters into little pieces and replant some portion of them the same day.
+                The roots that are not replanted sell for up to $20 per pound.
+            </Typography>
+            <TurmericPhotoGrid />
+        </React.Fragment>
+    )
+}
+
+function TurmericPhotoGrid(props) {
     return (
         <Box my={2}  >
             <Grid container

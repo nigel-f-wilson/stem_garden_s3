@@ -6,40 +6,50 @@ import SquarePhotoCard from "../SquarePhotoCard";
 // MUI CORE Imports
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+
 
 // MY images
 // turmeric images
-import turmeric_flower from "../../images/turmeric/turmeric_flower.JPG";
-import turmeric_replanting from "../../images/turmeric/turmeric_replanting.JPG";
-import turmeric_leaves from "../../images/turmeric/turmeric_leaves.JPG";
-import turmeric_harvest from "../../images/turmeric/turmeric_harvest.JPG";
+import guavas from "../../images/other_crops/guavas.JPG";
+import pineapple_guava from "../../images/flowers/pineapple_guava_flowers.JPG";
 
 
 const photoSet = [
     {
-        img: turmeric_harvest,
-        title: 'Turmeric rhizomes',
-        description: 'Two freshly harvested bunches',
-        gridCols: 12,
-        hideTitle: true,
-    }, {
-        img: turmeric_flower,
-        title: 'Turmeric Flower',
-        description: '',
+        img: guavas,
+        title: 'Guavas',
+        description: ' ',
         gridCols: 6,
         hideTitle: true,
-    }, {
-        img: turmeric_replanting,
-        title: 'Turmeric freshly planted',
-        description: '',
+    },  
+    {
+        img: pineapple_guava,
+        title: 'Guava Flowers',
+        description: ' ',
         gridCols: 6,
         hideTitle: true,
-    },
+    },  
 ];
 
-// The GardenGallery renders a navbar and a layout of pictures and explanatory paragraphs.
-// M vs. D layout of pictures is handled using MUI Grid.
-export default function FigPhotoGrid(props) {
+
+                
+
+export default function GuavaInfo(props) {
+    return (
+        <React.Fragment>
+            <Typography align='center' color='textPrimary' component='h2' variant='h2'>
+                Guava
+                </Typography>
+            {/* <Typography align='justify' color='textPrimary' component='h2' variant='body1' >
+                Guavas give a unique depth to my homegrown fruit smoothies.
+                </Typography> */}
+            <GuavaPhotoGrid /> 
+        </React.Fragment>
+    )
+}
+
+function GuavaPhotoGrid(props) {
     return (
         <Box my={2}  >
             <Grid container

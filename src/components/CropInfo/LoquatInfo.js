@@ -6,49 +6,54 @@ import SquarePhotoCard from "../SquarePhotoCard";
 // MUI CORE Imports
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+
 
 // MY images
-// papaya images
-import papaya_flower from "../../images/papaya/papaya_flower.JPG";
-import papaya_trees from "../../images/papaya/papaya_trees.JPG";
-import papaya_leaf from "../../images/papaya/papaya_leaf.jpg";
-import papaya_halved from "../../images/papaya/papaya_halved.JPG";
-import papaya_picking from "../../images/papaya/papaya_picking.JPG";
-import papaya_pile from "../../images/papaya/papaya_pile.JPG";
-import papaya_fruit from "../../images/papaya/papaya_fruit.JPG";
+// turmeric images
+import loquats from "../../images/loquat/loquats.JPG";
+import loquat_harvest from "../../images/loquat/loquat_harvest.JPG";
+import loquat_blossom from "../../images/loquat/loquat_blossom.JPG";
 
 
 const photoSet = [
     {
-        img: papaya_halved,
-        title: 'Ripe papaya halved',
-        description: 'Ripe papaya halved',
+        img: loquat_harvest,
+        title: 'loquat_harvest',
+        description: ' ',
         gridCols: 12,
         hideTitle: true,
     }, {
-        img: papaya_trees,
-        title: 'Papaya Halved',
+        img: loquats,
+        title: ' ',
         description: '',
-        gridCols: 4,
+        gridCols: 6,
         hideTitle: true,
     }, {
-        img: papaya_pile,
-        title: 'Banana and Papaya Harvest',
+        img: loquat_blossom,
+        title: ' ',
         description: '',
-        gridCols: 4,
+        gridCols: 6,
         hideTitle: true,
-    }, {
-        img: papaya_flower,
-        title: 'Dwarf Cavendish Banana Harvest',
-        description: 'We grow two varieties of banana: Burro and Dwarf Cavendish.',
-        gridCols: 4,
-        hideTitle: true,
-    }, 
+    },
 ];
 
-// The GardenGallery renders a navbar and a layout of pictures and explanatory paragraphs.
-// M vs. D layout of pictures is handled using MUI Grid.
-export default function PapayaPhotoGrid(props) {
+
+                
+export default function LoquatInfo(props) {
+    return (
+        <React.Fragment>
+            <Typography align='center' color='textPrimary' component='h2' variant='h2'>
+                Loquat
+            </Typography>
+            <Typography align='justify' color='textPrimary' component='h2' variant='body1' >
+                Also known as Misbeliefs or Japanese plums.
+            </Typography>
+            <LoquatPhotoGrid />
+        </React.Fragment>
+    )
+}
+function LoquatPhotoGrid(props) {
     return (
         <Box my={2}  >
             <Grid container
@@ -66,7 +71,6 @@ export default function PapayaPhotoGrid(props) {
         </Box>
     )
 }
-
 
 function PhotoGrid(props) {
 
