@@ -82,8 +82,7 @@ export default function App() {
                             <PuzzleCollectionPage />
                         </Route> 
 
-                        {/* TODO *************************************************/}
-
+                        
 
                         {/* GARDEN STUFF */}
                         <Route path="/garden" 
