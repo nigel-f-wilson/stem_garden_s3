@@ -7,12 +7,14 @@ import Navbar from "../components/Navbar/Navbar";
 import SquarePhotoCard from "../components/SquarePhotoCard";
 import WildlifePhotoGrid from "../components/CropInfo/WildlifePhotoGrid";
 import BananaInfo from "../components/CropInfo/BananaInfo";
-import PapayaPhotoGrid from "../components/CropInfo/PapayaPhotoGrid";
-import TurmericPhotoGrid from "../components/CropInfo/TurmericPhotoGrid";
-import LimePhotoGrid from "../components/CropInfo/LimePhotoGrid";
-import LoquatPhotoGrid from "../components/CropInfo/LoquatPhotoGrid";
-import FigPhotoGrid from "../components/CropInfo/FigPhotoGrid";
-import GuavaPhotoGrid from "../components/CropInfo/GuavaPhotoGrid";
+import PapayaInfo from "../components/CropInfo/PapayaInfo";
+import TurmericInfo from "../components/CropInfo/TurmericInfo";
+import LimeInfo from "../components/CropInfo/LimeInfo";
+import LoquatInfo from "../components/CropInfo/LoquatInfo";
+import FigInfo from "../components/CropInfo/FigInfo";
+import GuavaInfo from "../components/CropInfo/GuavaInfo";
+import FlowerInfo from "../components/CropInfo/FlowerInfo";
+import OtherCropsInfo from "../components/CropInfo/OtherCropsInfo";
 
 
 // MY images
@@ -260,170 +262,37 @@ function WhatsGrowingTabContent() {
             </Grid>
 
             <Grid item xs={12} md={6}>
-                <Typography align='center' color='textPrimary' component='h2' variant='h2'>
-                    Papaya
-                </Typography>
-                <Typography align='justify' color='textPrimary' component='h2' variant='body1' >
-                    I didn't come to enjoy eating papaya until I grew them myself. Most papaya sold at grocery stores are picked prematurely to
-                    improve shelf-life but as a result they never ripen properly. I usually leave the fruits on the trees until one or two days 
-                    before they are ready to eat. This way they get much sweeter and develop a interesting flavor. 
-                    Papaya is a key ingredient in my homegrown fruit smoothies. I sell papaya green, ripe, or frozen.
-                </Typography>
-                <PapayaPhotoGrid />
+                <PapayaInfo />
             </Grid>
 
             <Grid item xs={12} md={6}>
-                <Typography align='center' color='textPrimary' component='h2' variant='h2'>
-                    Turmeric
-                </Typography>
-                <Typography align='justify' color='textPrimary' component='h2' variant='body1' >
-                    I started growing a lot of turmeric when I decided that I wanted the STEM Garden to require less maintenance while still producing valuable crops. 
-                    Turmeric is very happy in New Orleans' climate, especially in our light, well-drained soil. Its broad leaves help shade out 
-                    weeds and other competition. Unlike the fruits we grow, which need picked daily when they are in season, turmeric only 
-                    requires hands on work a few days out of the year. It keeps very well if it is dug up in the dry season, so each October 
-                    I dig up all the turmeric, break the big root clusters into little pieces and replant some portion of them the same day. 
-                    The roots that are not replanted sell for up to $20 per pound.
-                </Typography>
-                <TurmericPhotoGrid />
+                <TurmericInfo />
             </Grid>
             
             <Grid item xs={12} md={6}>
-                <Typography align='center' color='textPrimary' component='h2' variant='h2'>
-                    Loquat
-                </Typography>
-                <Typography align='justify' color='textPrimary' component='h2' variant='body1' >
-                    Also known as Misbeliefs or Japanese plums.
-                </Typography>
-                <LoquatPhotoGrid />
+                <LoquatInfo />
             </Grid>
 
             <Grid item xs={12} md={6}>
-                <Typography align='center' color='textPrimary' component='h2' variant='h2'>
-                    Limes
-                </Typography>
-                <Typography align='justify' color='textPrimary' component='h2' variant='body1' >
-                    Other citrus varieties coming soon!
-                </Typography>
-                <LimePhotoGrid />
+                <LimeInfo />
             </Grid>
 
             <Grid item xs={12} md={6}>
-                <Typography align='center' color='textPrimary' component='h2' variant='h2'>
-                    Figs
-                </Typography>
-                <Typography align='justify' color='textPrimary' component='h2' variant='body1' >
-                    We sell fruit and rooted cuttings in case you want to grow your own.
-                </Typography>
-                <FigPhotoGrid />
+                <FigInfo />
             </Grid>
 
             <Grid item xs={12} md={6}>
-                <Typography align='center' color='textPrimary' component='h2' variant='h2'>
-                    Guava
-                </Typography>
-                <Typography align='justify' color='textPrimary' component='h2' variant='body1' >
-                    Also known as Misbeliefs and Japanese plums.
-                </Typography>
-                <GuavaPhotoGrid />
+                <GuavaInfo />
             </Grid>
 
-            <Typography align='center' color='textPrimary' component='h1' variant='h1'>
-                What's Growing?
-            </Typography>
-            <Typography align='justify' color='textPrimary' component='h2' variant='body1' >
-                I got into gardening inspired by my early experiences foraging for wild edibles and
-                my garden still shows many signs of this influence.  While certain crops are planted in neat rows
-                and managed carefully, many other species are naturalized here and are allowed to grow wherever they
-                volunteer. Because of this approach, a walk around the garden always has a surprize in store!
-                The garden produces lots to eat, but productivity is never the top priority. My focus is always
-                on improving soil health, creating wildlife habitat, and increasing bio-diversity.
-                </Typography>
-            {/* <PhotoGrid data={photoSetOne} /> */}
-
-
+            <Grid item xs={12} md={6}>
+                <FlowerInfo />
+            </Grid>
             
-
-
-            <Typography align='center' color='textPrimary' component='h2' variant='h2'>
-                Papaya
-                </Typography>
-            <Typography align='justify' color='textPrimary' component='h2' variant='body1' >
-                I didn't come to enjoy eating papaya until I grew them myself. Most papaya sold at grocery stores never ripen properly because they are picked prematurely to
-                improve shelflife. I usually leave the fruits on the trees until one or two days before they are ready to eat and this way they get much sweeter and more
-                interesting flavor. Papaya is a key ingredient in my homegrown fruit smoothies. I sell papaya green, ripe, or frozen.
-                </Typography>
-            {/* <PhotoGrid data={photoSetPapaya} /> */}
-
-
-
-            <Typography align='center' color='textPrimary' component='h2' variant='h2'>
-                Turmeric
-                </Typography>
-            <Typography align='justify' color='textPrimary' component='h2' variant='body1' >
-                I started growing a lot of turmeric when I decided that I wanted the STEM Garden to require less maintenance while still producing valuable crops.
-                Turmeric is very happy in New Orleans' climate, especially in our soft airy soil. Its broad leaves help shade out weeds and other competition.
-                Unlike all the fruits we grow, which need picked regularly when they are in season, turmeric only requires hands on work a few days out of the year.
-                It keeps very well if it is dug up in the dry season, so each October I dig up all the turmeric, break the big root clusters into little pieces and replant
-                some portion of them the same day. The roots that are kept sell for up to $20 per pound, whereas banana and papaya sell for less than $2 per pound.
-                </Typography>
-            {/* <PhotoGrid data={photoSetTurmeric} /> */}
-
-
-
-            <Typography align='center' color='textPrimary' component='h2' variant='h2'>
-                Other Crops
-                </Typography>
-            <Typography align='justify' color='textPrimary' component='h2' variant='body1' >
-                Besides banana, papaya, and turmeric there are dozens of other plants that are grown here for thier beauty, for personal consumption, and for sharing
-                with friends and neighbors. One of the things that got me into gardening was the realization that food is better when the distance between the plant
-                and the kitchen is minimized. Not only are homegrown tomatoes free, they are immesurably better than any tomato that has been shipped in from another
-                state and made to wait around on a grocery store shelf. While I don't grow all my own food, I do eat something I grew everyday. Meal preparation always
-                starts with a walk around the garden to see what needs to get used.
-                </Typography>
-            {/* <PhotoGrid data={photoSetOtherCrops} /> */}
-
-
-
-            <Typography align='center' color='textPrimary' component='h2' variant='h2'>
-                Flowers
-                </Typography>
-            <Typography align='justify' color='textPrimary' component='h2' variant='body1' >
-                I prefer to grow food and don't put a lot of energy into growing plants that are only ornamental, but there are many food bearing plants that also have
-                beautiful flowers. Some plants I grow primarily for their flowers as a way to attract pollinators.
-                </Typography>
-            {/* <PhotoGrid data={photoSetFlowers} /> */}
-
-
-            <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-                Availability
-            </Typography>
-            <Typography align='justify' color='textPrimary' gutterBottom component='p' variant='body1'>
-                Due to the extremely hand-on nature of my math enrichment lessons they are not offered in an online format.
-                I hope to begin offering in-person math enrichment lessons in the garden beginning in March 2021, though this will be depend on the pandemic.
-            </Typography>
-            <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-                Topics
-            </Typography>
-            <Typography align='justify' color='textPrimary' gutterBottom component='p' variant='body1'>
-                By Enrichment I mean "All the math they don't teach you in school." I am a jack-of-all-trades and I have applied math to
-                improve my own life in countless ways, including in building the classroom that I teach out of and the solar array that powers it.
-                My approach to math enrichment focuses on learning math along the way to reaching another goal you care about, rather than learning math on
-                the promise that someday down the road you'll find it useful. Enrichment can go any direction you want it to! What do you want to build?
-                Here are some favorite trailheads I've used before for enrichment explorations, just to jog your imagination:<br />
-                <ul>
-                    <li>Explore the physics of sound waves and the mathematical pattern in the way the frets are spaced on the neck of a guitar.</li>
-                    <li>Build things! Learn how to design and build stable wooden structures. Work your way up to building a catault and learn geometry and calculus along the way.</li>
-                    <li>Master strategy games like Nim, Hex, the 15-Game, and logic puzzles like sudoku and ken-ken. </li>
-                    <li>Learn about the off-grid solar power system that supplies the classroom.</li>
-                </ul>
-            </Typography>
-            <Typography align='left' color='textPrimary' gutterBottom component='h3' variant='h4'>
-                Pricing
-            </Typography>
-            <Typography align='justify' color='textPrimary' gutterBottom component='p' variant='body1'>
-                My hourly rate for one-on-one math enrichment is $30. I charge less for this service than normal tutoring
-                because it is more fun and I want to encourage more students to try it out!
-            </Typography>
+            <Grid item xs={12} md={6}>
+                <OtherCropsInfo />
+            </Grid>
+            
 
         </Grid>
     )
