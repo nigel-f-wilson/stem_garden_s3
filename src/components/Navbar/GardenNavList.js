@@ -75,7 +75,7 @@ export default function GardenNavigationList(props) {
                     }
                 }}
             >
-                <Icon className="fas fa-carrot fa-2x"
+                <Icon className="fas fa-camera fa-2x"
                     classes={{ root: classes.icon }}
                 />
                 <ListItemText 
@@ -84,7 +84,7 @@ export default function GardenNavigationList(props) {
                 />
             </ListItem>
 
-            {/* <ListItem
+            <ListItem
                 key={'for_sale'}
                 className={classes.listItem}
                 button
@@ -99,7 +99,7 @@ export default function GardenNavigationList(props) {
                     primary={'Produce for Sale'}
                     primaryTypographyProps={{ variant: 'h5' }}
                 />
-            </ListItem> */}
+            </ListItem>
 
 
         </React.Fragment>
